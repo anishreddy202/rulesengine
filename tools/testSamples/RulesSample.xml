@@ -1,0 +1,159 @@
+<configs schema-version="2" xmlns="http://www.whitecdn.com/schemas/rules/2.0/rulesSchema.xsd">
+  <rules schema-version="2" rulesetversion="78" rulesetid="2011">
+    <rule id="21008" platform="http-small" status="active" version="2" custid="B7B0">
+      <!--Changed by userId: 199 on 11/26/2013 07:08:12 PM GMT-->
+      <!--Changed by userId: 199 on 11/26/2013 07:07:16 PM GMT-->
+      <!--Changed by justin.baugh@refinery29.com on 11/26/2013 04:45:42 PM GMT from IP: 72.21.82.34-->
+      <!--Changed by justin.baugh@refinery29.com on 11/26/2013 04:44:56 PM GMT from IP: 72.21.82.34-->
+      <description>www cache rules 1 yr for eot gif jpeg jpg otf png svg woff and 5 mins for all else</description>
+      <!--If-->
+      <match.customer-origin value="/80B7B0/www-origin.refinery29.com/">
+        <select.first-match>
+          <!--AndIf-->
+          <match.url-path.extension result="match" value="eot gif jpeg jpg otf png svg woff" ignore-case="true">
+            <feature.external-ttl value="1" units="years" />
+            <feature.force-internal-maxage value="1" units="years" />
+          </match.url-path.extension>..
+          <!--ElseIf-->
+          <match.url-path.extension result="nomatch" value="eot gif jpeg jpg otf png svg woff" ignore-case="true">
+            <feature.external-ttl value="5" units="minutes" />
+            <feature.force-internal-maxage value="5" units="minutes" />
+          </match.url-path.extension>
+        </select.first-match>
+      </match.customer-origin>
+    </rule>
+    <rule id="21768" platform="http-small" status="active" version="8" custid="B7B0">
+      <!--Changed by userId: 199 on 12/23/2013 09:42:00 PM GMT-->
+      <!--Changed by justin.baugh@refinery29.com on 12/23/2013 08:51:36 PM GMT from IP: 72.21.82.34-->
+      <description>cache rules</description>
+      <select.first-match>
+        <!--If-->
+        <match.url-path.extension result="match" value="eot gif jpeg jpg otf png svg woff" ignore-case="true">
+          <feature.force-internal-maxage value="1" units="years" />
+          <feature.external-ttl value="1" units="years" />
+        </match.url-path.extension>
+        <!--ElseIf-->
+        <match.url-path.extension result="nomatch" value="eot gif jpeg jpg otf png svg woff" ignore-case="true">
+          <feature.force-internal-maxage value="5" units="minutes" />
+          <feature.external-ttl value="5" units="minutes" />
+        </match.url-path.extension>
+        <!--ElseIf-->
+        <match.url-query.wildcard result="match" value="utm_source utm_medium utm_campaign utm_term utm_content" ignore-case="true">
+          <feature.cache-queries mode="exclude" value="*" />
+        </match.url-query.wildcard>
+        <!--ElseIf-->
+        <match.request-header.wildcard name="User-Agent" result="match" value="*facebook*" ignore-case="true">
+          <feature.bypass-cache value="true" />
+        </match.request-header.wildcard>
+      </select.first-match>
+    </rule>
+    <rule id="21007" platform="http-small" status="active" version="1" custid="B7B0">
+      <!--Changed by userId: 277 on 10/23/2013 07:15:14 AM GMT-->
+      <!--Changed by justin.baugh@refinery29.com on 10/23/2013 04:13:24 AM GMT from IP: 72.21.82.34-->
+      <description>Static default 1 year cache &amp; ignore query string</description>
+      <!--If-->
+      <match.customer-origin value="/80B7B0/static-origin.refinery29.com/">
+        <feature.external-ttl value="365" units="days" />
+        <feature.force-internal-maxage value="365" units="days" />
+        <feature.ignore-origin-nocache value="true" />
+        <feature.cache-queries mode="exclude-all" value="" />
+      </match.customer-origin>
+    </rule>
+    <rule id="21555" platform="http-small" status="active" version="1" custid="B7B0">
+      <!--Changed by userId: 127 on 11/24/2013 10:58:03 PM GMT-->
+      <!--Changed by justin.baugh@refinery29.com on 11/24/2013 12:55:45 PM GMT from IP: 72.21.82.36-->
+      <!--Changed by justin.baugh@refinery29.com on 11/24/2013 12:55:27 PM GMT from IP: 72.21.82.36-->
+      <description>bypass cache in presence of a cookie</description>
+      <!--If-->
+      <match.cookie.param key="R29_UID" result="match" value="*" ignore-case="true">
+        <!--AndIf-->
+        <match.url-path.extension result="nomatch" value="css js gif jpg png jpeg" ignore-case="true">
+          <feature.bypass-cache value="true" />
+        </match.url-path.extension>
+      </match.cookie.param>
+    </rule>
+    <rule id="22415" platform="http-small" status="active" version="7" custid="B7B0">
+      <!--Changed by userId: 277 on 03/30/2014 08:36:08 PM GMT-->
+      <!--Changed by matt.anderson@refinery29.com on 03/30/2014 03:52:55 PM GMT from IP: 67.189.242.23-->
+      <description>Mobile redirect for iOS</description>
+      <!--If-->
+      <match.host value="www.refinery29.com">
+        <!--AndIf-->
+        <match.var.boolean key="wurfl_vcap_is_ios" value="true">
+          <!--AndIf-->
+          <match.var.boolean key="wurfl_cap_is_tablet" value="false">
+            <!--AndIf-->
+            <match.var.regex key="wurfl_cap_device_os_version" result="match" value="[6-9](?:\\.[0-9]+)?(?:\\.[0-9]+)?" ignore-case="false">
+              <!--AndIf-->
+              <match.cookie.param key="R29_VIEW" result="nomatch" value="desktop" ignore-case="false">
+                <feature.url-user-rewrite pattern="/80B7B0/www-origin.refinery29.com/(.*)" value="/80B7B0/feed-origin.refinery29.com/$1" />
+              </match.cookie.param>
+            </match.var.regex>
+          </match.var.boolean>
+        </match.var.boolean>
+      </match.host>
+    </rule>
+    <rule id="27809" platform="http-small" status="active" version="1" custid="B7B0">
+      <!--Changed by userId: 430 on 06/19/2014 02:54:50 PM GMT-->
+      <!--Changed by userId: 430 on 06/19/2014 02:52:06 PM GMT-->
+      <!--Changed by userId: 430 on 06/19/2014 02:48:52 PM GMT-->
+      <description>Mobile redirect for iOS 8 Workaround</description>
+      <!--If-->
+      <match.host value="www.refinery29.com">
+        <!--AndIf-->
+        <match.var.boolean key="wurfl_vcap_is_ios" value="true">
+          <!--AndIf-->
+          <match.var.boolean key="wurfl_cap_is_tablet" value="false">
+            <!--AndIf-->
+            <match.request-header.regex name="User-Agent" result="match" value="iPhone\ OS\ 8_" ignore-case="false">
+              <!--AndIf-->
+              <match.cookie.param key="R29_VIEW" result="nomatch" value="desktop" ignore-case="false">
+                <feature.url-user-rewrite pattern="/80B7B0/www-origin.refinery29.com/(.*)" value="/80B7B0/feed-origin.refinery29.com/$1" />
+                <feature.comment value="INC0126680" />
+              </match.cookie.param>
+            </match.request-header.regex>
+          </match.var.boolean>
+        </match.var.boolean>
+      </match.host>
+    </rule>
+    <rule id="22416" platform="http-small" status="active" version="8" custid="B7B0">
+      <!--Changed by userId: 277 on 03/30/2014 08:36:09 PM GMT-->
+      <!--Changed by matt.anderson@refinery29.com on 03/30/2014 03:52:27 PM GMT from IP: 67.189.242.23-->
+      <description>Mobile redirect for Android</description>
+      <!--If-->
+      <match.host value="www.refinery29.com">
+        <!--AndIf-->
+        <match.var.boolean key="wurfl_vcap_is_android" value="true">
+          <!--AndIf-->
+          <match.var.boolean key="wurfl_cap_is_tablet" value="false">
+            <!--AndIf-->
+            <match.var.regex key="wurfl_cap_device_os_version" result="match" value="4\\.[1-9](?:\\.[0-9]+)?|[5-9]\\.[0-9]+(?:\\.[0-9]+)?" ignore-case="false">
+              <!--AndIf-->
+              <match.cookie.param key="R29_VIEW" result="nomatch" value="desktop" ignore-case="false">
+                <feature.url-user-rewrite pattern="/80B7B0/www-origin.refinery29.com/(.*)" value="/80B7B0/feed-origin.refinery29.com/$1" />
+              </match.cookie.param>
+            </match.var.regex>
+          </match.var.boolean>
+        </match.var.boolean>
+      </match.host>
+    </rule>
+    <rule id="22620" platform="http-small" status="active" version="1" custid="B7B0">
+      <!--Changed by userId: 199 on 03/21/2014 08:38:58 PM GMT-->
+      <!--Changed by matt.anderson@refinery29.com on 03/21/2014 06:40:18 PM GMT from IP: 23.30.190.33-->
+      <description>Stale Content Delivery on Error TEST</description>
+      <!--If-->
+      <match.always>
+        <feature.stale-if-error value="true" />
+      </match.always>
+    </rule>
+    <rule id="26106" platform="http-small" status="active" version="0" custid="B7B0">
+      <!--Changed by userId: 256 on 04/21/2014 08:40:02 PM GMT-->
+      <!--Changed by justin.baugh@refinery29.com on 04/21/2014 08:14:17 PM GMT from IP: 72.21.82.34-->
+      <description>True Client IP</description>
+      <!--If-->
+      <match.always>
+        <feature.set-client-ip-header value="true" key="True-Client-IP" />
+      </match.always>
+    </rule>
+  </rules>
+</configs>

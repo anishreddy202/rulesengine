@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>$id$</id>
+    <title>$id$</title>
+    <version>$version$</version>
+    <authors>VDMS</authors>
+    <projectUrl>https://git.edgecastcdn.net/ui/portals.rulesengine</projectUrl>
+    <description>Porals.RulesEngine UI Nuget spec</description>
+    <copyright>2014</copyright>
+  </metadata>
+  <files>
+    <file src="dist\*" target="content\ui\$id$\$version$" />
+    <file src="dist\app.html" target="content\ui\$id$" />
+  </files>
+</package>

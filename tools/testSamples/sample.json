@@ -1,0 +1,44 @@
+{
+  "rule": {
+    "description": "www cache rules 1 yr for eot gif jpeg jpg otf png svg woff and 5 mins for all else",
+    "match.customer-origin": {
+      "select.first-match": {
+        "match.url-path.extension": [
+          {
+            "feature.external-ttl": {
+              "_value": "1",
+              "_units": "years"
+            },
+            "feature.force-internal-maxage": {
+              "_value": "1",
+              "_units": "years"
+            },
+            "_result": "match",
+            "_value": "eot gif jpeg jpg otf png svg woff",
+            "_ignore-case": "true"
+          },
+          {
+            "feature.external-ttl": {
+              "_value": "5",
+              "_units": "minutes"
+            },
+            "feature.force-internal-maxage": {
+              "_value": "5",
+              "_units": "minutes"
+            },
+            "_result": "nomatch",
+            "_value": "eot gif jpeg jpg otf png svg woff",
+            "_ignore-case": "true"
+          }
+        ],
+        "__text": ".."
+      },
+      "_value": "/80B7B0/www-origin.refinery29.com/"
+    },
+    "_id": "21008",
+    "_platform": "http-small",
+    "_status": "active",
+    "_version": "2",
+    "_custid": "B7B0"
+  }
+}

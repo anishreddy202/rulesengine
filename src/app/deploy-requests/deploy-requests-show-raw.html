@@ -1,0 +1,36 @@
+<p>
+  <div class="pull-right">
+    <span ng-if="prevPolicy">
+      Showing
+      <span class="text-success">
+        {{ newLines + ' additions' }}
+      </span>
+      and
+      <span class="text-danger">
+        {{ deletedLines + ' deletions' }}
+      </span>
+    </span>
+    <span class="text-muted" ng-if="!prevPolicy">
+      no diff available
+    </span>
+  </div>
+
+  <span>
+    <a ui-sref="main.policies.show.rulebuilder({id: policy.id})">{{ policy.name }}</a>
+  </span>
+  <span>
+    compared to
+  </span>
+  <span>
+    <a ng-if="prevPolicy" ui-sref="main.policies.show.rulebuilder({id: prevPolicy.id})">{{prevPolicy.name}}</a>
+    <span ng-if="!prevPolicy && createMode" class="text-muted">[ select environment ]</span>
+    <span ng-if="!prevPolicy && !createMode" class="text-muted">[ policy not available ]</span>
+  </span>
+</p>
+
+<div>
+  <div class="diff-view-container">
+    <code-diff old="prevRequestXML" new="{{xml}}"></code-diff>
+    <div class="backdrop" ng-show="prevRequestXML == '-1'"></div>
+  </div>
+</div>

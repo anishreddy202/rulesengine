@@ -1,0 +1,41 @@
+<div class="page-header">
+  <h5>
+    <a ui-sref="main.drafts.index">
+      Drafts
+    </a>
+  </h5>
+  <div class="pull-right">
+    <a class="btn btn-default" ui-sref="main.drafts.index">
+      <span class="fa fa-save"></span>
+      Cancel
+    </a>
+    <a class="btn btn-default" ng-click="saveDraft()">
+      <span class="fa fa-save"></span>
+      Save
+    </a>
+  </div>
+  <h2>
+    <input type="text" ng-model='draft.name' placeholder="Draft Name">
+  </h2>
+</div>
+
+<alert-msg></alert-msg>
+
+<ul class="nav nav-tabs">
+  <li ui-sref-active="active">
+    <a ui-sref="drafts.copy.rulebuilder({ id: draft.id })">
+      <span class="fa fa-list-alt"></span>
+      Rule Builder
+    </a>
+  </li>
+  <li ui-sref-active="active">
+    <a ui-sref="drafts.copy.raw({ id: draft.id })">
+      <span class="fa fa-file-code-o"></span>
+      Edit Raw
+    </a>
+  </li>
+</ul>
+
+<br>
+
+<ui-view></ui-view>

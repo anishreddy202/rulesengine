@@ -1,0 +1,5 @@
+<div ng-repeat="err in errors track by $index"
+     ng-if="errors && errors.length > 0"
+     class="has-error" >
+  <label class="control-label">{{err}}</label>
+</div>

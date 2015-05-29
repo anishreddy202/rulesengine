@@ -1,0 +1,11 @@
+{
+  "name": "all possible cases",
+  "media_type_id": 3,
+  "draft_type_id": 1,
+  "body": "<policy><rules><rule><description>simple if</description><match.request-header.literal name='test' result='match' value='100' ignore-case='true'><feature.bypass-cache value='enabled'/></match.request-header.literal></rule><rule><description>if else if (select.first-match)</description><select.first-match><match.cookie.param key='auth' result='match' value='token' ignore-case='false'><feature.cache-control-treatment value='okay'/></match.cookie.param><match.var.literal key='key' result='match' value='value' ignore-case='false'><feature.cache-fill-check-downstream-range value='10-300'/></match.var.literal></select.first-match></rule><rule><description>nested if</description><match.request-method value='GET'><match.url-path.directory result='match' value='edgecast' ignore-case='true' relative-to='test'><match.client-address result='match' value='12.2.2.3'><feature.gzip-validation value='enabled'/></match.client-address></match.url-path.directory></match.request-method></rule><rule><description>nested if else if (select.first-match)</description><match.request-scheme value='GET'><select.first-match><match.cdn-origin value='test'><feature.cacheable-status-codes value='1234'/></match.cdn-origin><match.var.regex key='key' result='match' value='value' ignore-case='true'><feature.cache-methods value='enabled'/></match.var.regex></select.first-match></match.request-scheme></rule><rule><description>nested if else if</description><select.first-match><match.country result='match' value='USA'><feature.bloom-filter-enable value='test'/><select.first-match><match.cdn-origin value='345'><feature.cache-fill-wait-msecs value='100' units='mins'/></match.cdn-origin><match.var.integer key='key' compare='equals' value='100'><feature.external-ttl value='100'/></match.var.integer></select.first-match></match.country><match.request-header.wildcard name='name' result='nomatch' value='(a-z)' ignore-case='false'><feature.cache-fill-wait-msecs value='10' units='sec'/></match.request-header.wildcard></select.first-match></rule></rules></policy>",
+  "created_at": "2015-03-02T18:00:32.918Z",
+  "updated_at": "2015-03-04T21:27:17.939Z",
+  "status": 1,
+  "id": 131,
+  "newName": "all possible cases"
+}

@@ -1,0 +1,74 @@
+<div class="_feature" ng-init="parentNodes = parentTree" id="{{matchNode._id}}">
+
+  <validator-msg errors="featureNode.errors"></validator-msg>
+
+  <div class="pull-right" ng-if="rule.editMode">
+    <div class="btn-group">
+      <a as-sortable-item-handle
+         ng-if="featureNodes.length > 1"
+         class="btn text-muted">
+        <span class="fa fa-arrows"></span>
+      </a>
+
+      <a pop-over
+           class="btn text-muted"
+           ng-if="featureNode.description"
+           data-content="{{featureNode.description}}"
+           data-original-title="{{featureNode.name}}">
+        <span class="fa fa-info"></span>
+      </a>
+      <a class="btn text-muted" ng-click="removeNode(featureNode, parentNodes)">
+        <span class="fa fa-times-circle"></span>
+      </a>
+    </div>
+  </div>
+
+
+  <form class="form-inline" role="form">
+    <div class="form-group">
+      <fieldset>
+        <legend>Feature</legend>
+
+          <select class="form-control input-sm"
+                  ng-disabled="!rule.editMode"
+                  ng-options="category.id as category.name for category in feature_categories"
+                  ng-model="featureNode.selectedCategory"
+                  ng-change="onSelectCategory(featureNode)"
+                  ng-init="featureNode.selectedCategory = featureNode.selectedCategory
+                ? featureNode.selectedCategory
+                : featureNode.category_id ? (feature_categories | filter:{'id': featureNode.category_id }: true)[0].id : undefined">
+            <option value="">Select Category</option>
+          </select>
+          <!-- Edit mode showing dropdown -->
+          <select class="form-control input-sm"
+                 ng-if="rule.editMode"
+                 ng-options="feature.tag as feature.name for feature in (matchNode.features | filter: filterByCategory(featureNode.selectedCategory))"
+                 ng-model="featureNode.selectedFeature"
+                 ng-change="onSelectFeature(featureNode, matchNode)"
+                 ng-init="featureNode.selectedFeature = featureNode.selectedFeature
+                  ? featureNode.selectedFeature
+                  : featureNode.tag ? (features | filter:{'tag': featureNode.tag }: true)[0].tag : undefined">
+        <option value="">Select Feature</option>
+      </select>
+        <!-- View mode showing dropdown -->
+        <select class="form-control input-sm"
+                ng-if="!rule.editMode"
+                ng-disabled="true"
+                ng-options="feature.tag as feature.name for feature in (features | filter: filterByCategory(featureNode.selectedCategory))"
+                ng-model="featureNode.selectedFeature"
+                ng-change="onSelectFeature(featureNode, matchNode)"
+                ng-init="featureNode.selectedFeature = featureNode.selectedFeature
+                ? featureNode.selectedFeature
+                : featureNode.tag ? (features | filter:{'tag': featureNode.tag }: true)[0].tag : undefined">
+          <option value="">Select Feature</option>
+        </select>
+      </fieldset>
+    </div>
+
+    <ng-include
+      src="'/rules/rulebuilder/_fields.html'"
+      ng-init="node = featureNode"
+      ng-if="featureNode.selectedFeature">
+    </ng-include>
+  </form>
+</div>

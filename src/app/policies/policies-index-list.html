@@ -1,0 +1,120 @@
+<div class="rich-list">
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="form-group">
+        <div class="input-group">
+          <label class="sr-only" for="policies-search">Search policies</label>
+          <span class="input-group-addon">
+            <span class="fa fa-search"></span>
+          </span>
+          <input type="search" id="policies-search" class="form-control" ng-model="richList.query">
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="pull-right">
+        <div class="btn-toolbar" role="toolbar">
+          <div class="btn-group">
+            <a class="btn btn-primary" data-toggle="modal" data-target="#confirmModal"
+               ng-show="richList.selected.length > 0">
+              <span class="fa fa-trash"></span>
+              <span class="">{{ richList.selected.length }}</span>
+            </a>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-default" model="reverse" ng-init="predicate='created_at'; reverse=true" ng-click="reverse=!reverse">
+              <span class="fa" ng-class="reverse ? 'fa-sort-amount-asc' : 'fa-sort-amount-desc'"></span>
+            </button>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+              <span class="caret"></span>
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu pull-right" role="menu">
+              <li ng-class="{ 'active': predicate == 'created_at' }">
+                <a ng-click="predicate='created_at'">Created</a>
+              </li>
+              <li ng-class="{ 'active': predicate == 'name' }">
+                <a ng-click="predicate='name'">Name</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ul class="list-group">
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col-xs-11">
+          <div class="media">
+            <div ng-if="richList.bulkActionable" class="checkbox pull-left">
+              <label>
+                <input type="checkbox"
+                       ng-model="allItemsSelected"
+                       ng-change="toggleAllItemsSelected(allItemsSelected)"
+                       ui-indeterminate="someItemsSelected"
+                  >
+              </label>
+            </div>
+            <div class="media-body">
+              <h4 class="text-muted">
+                Displaying {{
+                richList.filtered.length > maxItems ? maxItems : richList.filtered.length
+                }}
+                of {{ filteredCollection.length || 0 }} policies
+                <small ng-if="richList.bulkActionable">({{ richList.selected.length }} selected)</small>
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-1">
+          <h4><span ng-if="loading" class="pull-right fa fa-spinner fa-spin"></span></h4>
+        </div>
+      </div>
+    </li>
+
+    <li ng-repeat="item in richList.filtered = (filteredCollection = (collection | filter: filterRichList(filterParam)) | filter : richList.query | orderBy : predicate : reverse | limitTo : maxItems)"
+        class="list-group-item">
+
+      <div class="row">
+        <div class="col-xs-11">
+          <div class="media">
+            <div ng-if="richList.bulkActionable" class="checkbox pull-left">
+              <label>
+                <input type="checkbox" ng-model="item.selected" ng-change="setSelectedItems()">
+              </label>
+            </div>
+            <div class="media-body">
+              <h4>
+                <a ui-sref="main.policies.show.rulebuilder({ id: item.id })">
+                  {{ item.name }}
+                </a>
+                &nbsp;
+              </h4>
+              <ul class="text-muted list-inline">
+                <li ng-show="item.created_at">created {{ item.created_at | date : 'medium' }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-1">
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <!-- TODO: add no data / fallback error handling -->
+  <!--
+  <div class="fallback-container clearfix" ng-show="getListHasErroredOut || getListInProgress">
+    <i class="fa fa-spinner fa-spin fa-2x loading-spinner" ng-show="getListInProgress"></i>
+    <div class="refresh-container text-center" ng-show="getListHasErroredOut">
+      <h2 class="text-muted text-center">Oops, something went wrong.</h2>
+    </div>
+  </div>
+  -->
+
+</div> <!-- end rich-list -->
+
+
+<confirm-dialog items="richList.selected"></confirm-dialog>

@@ -1,0 +1,9 @@
+<div class="alert" ng-show="message" role="alert" ng-class="{'alert-success': message.success, 'alert-warning': message.warning,'alert-danger': message.error }">
+  {{message.text}}
+  <a class="text-muted pull-right" ng-click="message = undefined">
+    <span class="fa fa-times"></span>
+  </a>
+  <ul>
+    <li ng-repeat="detail in message.detail">{{detail}}</li>
+  </ul>
+</div>

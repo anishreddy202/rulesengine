@@ -1,0 +1,45 @@
+<div class="page-header">
+  <ol class="breadcrumb">
+    <li>
+      <a ui-sref="main.home">
+        Rules Engine
+      </a>
+    </li>
+    <li>
+      <a ui-sref="main.drafts.index">
+        Drafts
+      </a>
+    </li>
+    <li class="active">
+      Create
+    </li>
+  </ol>
+    <div class="row">
+        <div class="col-sm-10">
+          <form novalidate name="draftForm">
+            <div class="form-group" ng-class="{'has-error': draftForm.name.$invalid && $blurred}">
+              <input type="text"
+                     name="name"
+                     class="form-control"
+                     ng-model='draft.name'
+                     require-input
+                     placeholder="Draft Name Required" autofocus>
+            </div>
+          </form>
+        </div>
+        <div class="col-sm-2">
+            <div class="pull-right">
+                <a class="btn btn-default" ng-click="cancel()">
+                    <span class="fa "></span>
+                    Cancel
+                </a>
+                <a class="btn btn-primary " ng-click="saveDraft()">
+                    Continue
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<alert-msg></alert-msg>
+

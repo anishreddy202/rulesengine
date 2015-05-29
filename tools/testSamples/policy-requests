@@ -1,0 +1,42 @@
+[
+ {
+  "media_type_id": 1,
+  "body": "<configs schema-version='2' xmlns='http://www.whitecdn.com/schemas/rules/2.0/rulesSchema.xsd'><rules schema-version='2' rulesetversion='78'><rule platform='http-small' version='2' custid='B7B0'><match.asn result='matches' value='345'><match.country result='matches' value='USA'><feature.bandwidth-parameters result='enabled'/><feature.default-internal-maxage value='maxage' units='days' status='200'/><feature.honor-nocache-request result='disabled'/></match.country></match.asn><match.asn result='nomatch' value='345'><match.country result='nomatch' value='USA'><feature.bandwidth-parameters result='enabled'/><feature.set-request-header result='append' name='header_values' value='234'/><feature.deny-access result='disabled'/><feature.token-auth-denial-code value='optional_header_value' code='401' headername='WWW-Authenticate'/><match.client-address result='matches' value='23.23.23.23'><feature.deny-access result='disabled'/></match.client-address><match.client-address result='nomatch' value='23.23.23.23'><feature.deny-access result='enabled'/></match.client-address></match.country></match.asn></rule></rules></configs>",
+  "name": "Sample policy - staging rules",
+  "document_type_id": 1,
+  "draft_id": 110,
+  "status": 2,
+  "published_at": "2014-12-26T01:12:07.758Z",
+  "id": 101
+ },
+ {
+  "media_type_id": 1,
+  "body": "<configs schema-version='2' xmlns='http://www.whitecdn.com/schemas/rules/2.0/rulesSchema.xsd'><rules schema-version='2' rulesetversion='78'><rule platform='http-small' version='2' custid='B7B0'><match.asn result='matches' value='145'><match.country result='matches' value='USA'><match.client-address result='matches' value='123.2.22.45'><feature.bandwidth-parameters result='enabled'/><feature.honor-nocache-request result='disabled'/><feature.deny-access result='disabled'/></match.client-address></match.country></match.asn><match.asn result='nomatch' value='145'><match.country result='nomatch' value='USA'><match.client-address result='nomatch' value='123.2.22.45'><feature.bandwidth-parameters result='enabled'/><feature.set-request-header result='append' name='header_values' value='234'/><feature.deny-access result='disabled'/><feature.token-auth-denial-code value='optional_header_value' code='401' headername='WWW-Authenticate'/><match.client-address result='matches' value='23.23.23.23'><feature.deny-access result='disabled'/></match.client-address><match.client-address result='nomatch' value='23.23.23.23'><feature.deny-access result='enabled'/></match.client-address></match.client-address></match.country></match.asn></rule></rules></configs>",
+  "name": "Sample policy - prod rules",
+  "document_type_id": 1,
+  "draft_id": 102,
+  "status": 2,
+  "published_at": "2014-12-26T01:15:11.924Z",
+  "id": 103
+ },
+ {
+  "media_type_id": 1,
+  "body": "<configs schema-version='2' xmlns='http://www.whitecdn.com/schemas/rules/2.0/rulesSchema.xsd'><rules schema-version='2' rulesetversion='78'><rule platform='http-small' version='2' custid='B7B0'><match.country result='matches' value='USA'><feature.bandwidth-parameters result='enabled'/><feature.default-internal-maxage value='maxage' units='days' status='200'/><feature.honor-nocache-request result='disabled'/></match.country><match.country result='nomatch' value='USA'><feature.bandwidth-parameters result='enabled'/><feature.deny-access result='disabled'/><feature.token-auth-denial-code value='optional_header_value' code='401' headername='WWW-Authenticate'/><match.client-address result='matches' value='23.23.23.23'><feature.deny-access result='disabled'/></match.client-address><match.client-address result='nomatch' value='23.23.23.23'><feature.deny-access result='enabled'/></match.client-address></match.country></rule></rules></configs>",
+  "name": "Sample policy - staging rules v1.1",
+  "document_type_id": 1,
+  "draft_id": 104,
+  "status": 2,
+  "published_at": "2014-12-26T01:17:00.690Z",
+  "id": 105
+ },
+ {
+  "media_type_id": 1,
+  "body": "<configs schema-version='2' xmlns='http://www.whitecdn.com/schemas/rules/2.0/rulesSchema.xsd'><rules schema-version='2' rulesetversion='78'><rule platform='http-small' version='2' custid='B7B0'><match.asn result='matches' value='345'><match.country result='matches' value='USA'><feature.bandwidth-parameters result='enabled'/><feature.default-internal-maxage value='maxage' units='days' status='200'/><feature.honor-nocache-request result='disabled'/></match.country></match.asn><match.asn result='nomatch' value='345'><match.country result='nomatch' value='USA'><feature.bandwidth-parameters result='enabled'/><feature.set-request-header result='append' name='header_values' value='234'/><feature.deny-access result='disabled'/><feature.token-auth-denial-code value='optional_header_value' code='401' headername='WWW-Authenticate'/><match.client-address result='matches' value='23.23.23.23'><feature.deny-access result='disabled'/></match.client-address><match.client-address result='nomatch' value='23.23.23.23'><feature.deny-access result='enabled'/></match.client-address></match.country></match.asn></rule><rule platform='http-small' version='2' custid='B7B0'><match.asn result='matches' value='345'><match.country result='matches' value='UK'><feature.bandwidth-parameters result='enabled'/><feature.default-internal-maxage value='maxage' units='days' status='200'/><feature.honor-nocache-request result='disabled'/></match.country></match.asn><match.asn result='nomatch' value='345'><match.country result='nomatch' value='UK'><feature.bandwidth-parameters result='enabled'/><feature.set-request-header result='append' name='header_values' value='234'/><feature.deny-access result='disabled'/><feature.token-auth-denial-code value='optional_header_value' code='401' headername='WWW-Authenticate'/><match.client-address result='matches' value='128.4.23.22'><feature.deny-access result='disabled'/></match.client-address><match.client-address result='nomatch' value='128.4.23.22'><feature.deny-access result='enabled'/></match.client-address></match.country></match.asn></rule><rule platform='http-small' version='2' custid='B7B0'><match.asn result='matches' value='345'><match.country result='matches' value='INDIA'><feature.bandwidth-parameters result='enabled'/><feature.default-internal-maxage value='maxage' units='days' status='200'/><feature.honor-nocache-request result='disabled'/></match.country></match.asn><match.asn result='nomatch' value='345'><match.country result='nomatch' value='INDIA'><feature.bandwidth-parameters result='enabled'/><feature.set-request-header result='append' name='header_values' value='234'/><feature.deny-access result='disabled'/><feature.token-auth-denial-code value='optional_header_value' code='401' headername='WWW-Authenticate'/><match.client-address result='matches' value='45.45.45.45'><feature.deny-access result='disabled'/></match.client-address><match.client-address result='nomatch' value='45.45.45.45'><feature.deny-access result='enabled'/></match.client-address></match.country></match.asn></rule></rules></configs>",
+  "name": "Sample policy - multiple rules",
+  "document_type_id": 1,
+  "draft_id": 111,
+  "status": 2,
+  "published_at": "2014-12-26T01:28:10.741Z",
+  "id": 106
+ }
+]

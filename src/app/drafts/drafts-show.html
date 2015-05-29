@@ -1,0 +1,106 @@
+<loading-anim></loading-anim>
+
+<div class="page-header">
+  <ol class="breadcrumb">
+    <li>
+      <a ui-sref="main.home">
+        Rules Engine
+      </a>
+    </li>
+    <li>
+      <a ui-sref="main.drafts.index">
+        Drafts
+      </a>
+    </li>
+    <li class="active">
+      {{ draft.id || 'Create' }}
+    </li>
+  </ol>
+  <div class="pull-right" ng-if="!$root.editMode">
+    <div class="btn-toolbar">
+      <div class="btn-group">
+        <a role="button"
+           ng-disabled = "$root.ruleEditing"
+           class="btn btn-default"
+           ng-click="duplicateDraft()">
+          <span class="fa fa-copy"></span>
+          Duplicate
+        </a>
+        <a role="button"
+           ng-disabled = "$root.ruleEditing"
+           class="btn btn-default"
+           data-toggle="modal"
+           data-target="#confirmModal">
+          <span class="fa fa-trash-o"></span>
+          Delete
+        </a>
+      </div>
+      <div class="btn-group">
+        <a role="button"
+           ng-disabled = "$root.ruleEditing"
+           class="btn btn-primary"
+           ng-click="publishDraft()">
+          <span class="fa fa-lock"></span>
+          Lock Draft as Policy
+        </a>
+      </div>
+    </div>
+  </div>
+  <h2 ng-if="!$root.editMode">
+    <span >{{ draft.name }}</span>
+    <small>
+      <a ng-click="editName()" ng-if="!$root.ruleEditing">
+        <span class="fa fa-pencil text-muted"></span>
+      </a>
+    </small>
+    <span ng-if="editNameLoading" class="fa fa-spinner fa-spin"></span>
+  </h2>
+  <form novalidate name="draftForm">
+    <div ng-if="$root.editMode" class="row">
+      <div class="col-xs-8" ng-class="{'has-error': draftForm.name.$invalid && $blurred}">
+        <div class="input-group" style="padding: 6px 0;">
+          <input type="text"
+                 name="name"
+                 class="form-control"
+                 ng-init="draft_newName = draft.name"
+                 ng-model='draft_newName'
+                 require-input
+                 placeholder="Draft Name Required" autofocus>
+          <span class="input-group-btn">
+            <a class="btn btn-default" ng-click="cancelNameEditing()">
+              <span class="fa fa-times"></span>
+            </a>
+            <a class="btn btn-default"
+               ng-disabled="draft_newName == draft.name"
+               ng-click="updateDraftName(draft_newName)">
+              <span class="fa fa-check"></span>
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<alert-msg></alert-msg>
+
+<confirm-dialog items="draft" title="Draft"></confirm-dialog>
+
+<ul class="nav nav-tabs" style="margin-bottom:20px;">
+  <li ui-sref-active="active">
+    <a ui-sref="main.drafts.show.rulebuilder">
+      <span class="fa fa-list-alt"></span>
+      Rule Builder
+    </a>
+  </li>
+  <li ui-sref-active="active">
+    <a ui-sref="main.drafts.show.raw">
+      <span class="fa fa-file-code-o"></span>
+      Raw
+    </a>
+  </li>
+</ul>
+
+<ui-view></ui-view>
+
+
+

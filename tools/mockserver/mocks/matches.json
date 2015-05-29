@@ -1,0 +1,1608 @@
+[
+  {
+    "tag": "match.always",
+    "name": "Always",
+    "enabled": true,
+    "description": null,
+    "category_id": 10,
+    "attributes": [],
+    "created_at": "2015-02-10T23:14:13.2442504+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.asn",
+    "name": "AS Number",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 7,
+    "attributes": [
+      {
+        "name": "",
+        "key": "result",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "match",
+        "type": "combo",
+        "required": true,
+        "options": [{
+          "key":"match",
+          "name":"Matches"
+        },{
+          "key":"nomatch",
+          "name":"Does not match"
+        }],
+        "created_at": "2015-02-10T23:15:44.852148+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 1,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:15:44.852148+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:15:44.852148+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.cdn-origin",
+    "name": "CDN Origin",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 8,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "array",
+        "required": true,
+        "options": [{"key":"AM", "name":"America"},
+          {"key":"AF", "name":"Africa"},
+          {"key":"APAC", "name":"Asia"},
+          {"key":"EU", "name":"Europe"},
+          {"key":"AU", "name":"Australia"}],
+        "created_at": "2015-02-10T23:17:22.9187768+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:17:22.9187768+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.client-address",
+    "name": "Client IP Address",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 10,
+    "attributes": [
+      {
+        "name": "",
+        "key": "result",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "match",
+        "type": "string",
+        "required": true,
+        "options": [{
+          "key":"match",
+          "name":"Matches"
+        },{
+          "key":"nomatch",
+          "name":"Does not match"
+        }],
+        "created_at": "2015-02-10T23:17:42.3729744+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 1,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:17:42.3729744+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:17:42.3729744+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.cookie.param",
+    "name": "Cookie Parameter",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 5,
+    "attributes": [
+      {
+        "name": "",
+        "key": "key",
+        "ordinal": 1,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:18:09.6431728+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "result",
+        "ordinal": 2,
+        "regex": "",
+        "default_value": "match",
+        "type": "string",
+        "required": true,
+        "options": [{
+          "key":"match",
+          "name":"Matches"
+        },{
+          "key":"nomatch",
+          "name":"Does not match"
+        }],
+        "created_at": "2015-02-10T23:18:09.6431728+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 4,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:18:09.6431728+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "ignore-case",
+        "ordinal": 5,
+        "regex": "",
+        "default_value": "",
+        "type": "bool",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:18:09.6431728+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:18:09.6431728+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.cookie.regex",
+    "name": "Cookie Parameter Regex",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 5,
+    "attributes": [
+      {
+        "name": "",
+        "key": "key",
+        "ordinal": 1,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:18:36.7417624+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "result",
+        "ordinal": 2,
+        "regex": "",
+        "default_value": "match",
+        "type": "string",
+        "required": true,
+        "options": [{
+          "key":"match",
+          "name":"Matches"
+        },{
+          "key":"nomatch",
+          "name":"Does not match"
+        }],
+        "created_at": "2015-02-10T23:18:36.7417624+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 4,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:18:36.7417624+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "ignore-case",
+        "ordinal": 5,
+        "regex": "",
+        "default_value": "",
+        "type": "bool",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:18:36.7417624+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:18:36.7417624+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.country",
+    "name": "Country",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 7,
+    "attributes": [
+      {
+        "name": "",
+        "key": "result",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "match",
+        "type": "string",
+        "required": true,
+        "options": [{
+          "key":"match",
+          "name":"Matches"
+        },{
+          "key":"nomatch",
+          "name":"Does not match"
+        }],
+        "created_at": "2015-02-10T23:19:29.3632608+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 2,
+        "regex": "",
+        "default_value": "",
+        "type": "array",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:19:29.3632608+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:19:29.3632608+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.customer-origin",
+    "name": "Customer Origin",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 8,
+    "attributes": [
+      {
+        "name": "Source",
+        "key": "source",
+        "ordinal": 0,
+        "regex": "^.+$",
+        "default_value": "/803F6A/cdnlb",
+        "type": "ARRSTR",
+        "required": true,
+        "options":
+        [
+          {
+            "key": "/803F6A/cdnlb",
+            "name": "/803F6A/cdnlb"
+          },
+          {
+            "key": "/803F6A/live",
+            "name": "/803F6A/live"
+          },
+          {
+            "key": "/803F6A/live-vty",
+            "name": "/803F6A/cdnlb-vty"
+          },
+          {
+            "key": "/003F6A",
+            "name": "/003F6A"
+          }
+        ]
+      }
+    ],
+    "created_at": "2015-02-10T23:19:45.7285+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.geo.boolean",
+    "name": "GEO Boolean",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 7,
+    "attributes": [
+      {
+        "name": "",
+        "key": "key",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:20:00.5180584+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 1,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:20:00.5180584+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:20:00.5180584+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.geo.integeer",
+    "name": "GEO Integer",
+    "enabled": true,
+    "description": null,
+    "category_id": 7,
+    "attributes": [],
+    "created_at": "2015-02-10T23:14:13.2598512+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.geo.literal",
+    "name": "GEO Literal",
+    "enabled": true,
+    "description": null,
+    "category_id": 7,
+    "attributes": [],
+    "created_at": "2015-02-10T23:14:13.2598512+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.geo.regex",
+    "name": "GEO Regex",
+    "enabled": true,
+    "description": null,
+    "category_id": 7,
+    "attributes": [],
+    "created_at": "2015-02-10T23:14:13.2598512+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.geo.wildcard",
+    "name": "GEO Wildcard",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 7,
+    "attributes": [
+      {
+        "name": "",
+        "key": "key",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:21:23.1398952+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 1,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:21:23.1398952+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "result",
+        "ordinal": 2,
+        "regex": "",
+        "default_value": "match",
+        "type": "string",
+        "required": true,
+        "options": [{
+          "key":"match",
+          "name":"Matches"
+        },{
+          "key":"nomatch",
+          "name":"Does not match"
+        }],
+        "created_at": "2015-02-10T23:21:23.1398952+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "regex": "",
+        "default_value": "",
+        "type": "bool",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:21:23.1398952+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:21:23.1398952+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.host",
+    "name": "Edge Cname",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 10,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:21:36.4005752+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:21:36.4005752+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.referring-domain",
+    "name": "Referring Domain",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 10,
+    "attributes": [
+      {
+        "name": "",
+        "key": "result",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "match",
+        "type": "string",
+        "required": true,
+        "options": [{
+          "key":"match",
+          "name":"Matches"
+        },{
+          "key":"nomatch",
+          "name":"Does not match"
+        }],
+        "created_at": "2015-02-10T23:21:50.14488+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 2,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:21:50.14488+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "regex": "",
+        "default_value": "",
+        "type": "bool",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:21:50.14488+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:21:50.14488+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.request-header.literal",
+    "name": "Request Header Literal",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 4,
+    "attributes": [
+      {
+        "name": "Name",
+        "key": "name",
+        "ordinal": 1,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:22:05.7300792+00:00",
+        "links": {}
+      },
+      {
+        "name": "Result",
+        "key": "result",
+        "ordinal": 2,
+        "regex": "",
+        "default_value": "match",
+        "type": "string",
+        "required": true,
+        "options": [{
+          "key":"match",
+          "name":"Matches"
+        },{
+          "key":"nomatch",
+          "name":"Does not match"
+        }],
+        "created_at": "2015-02-10T23:22:05.7300792+00:00",
+        "links": {}
+      },
+      {
+        "name": "Value",
+        "key": "value",
+        "ordinal": 4,
+        "regex": "[A-Z]",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:22:05.7300792+00:00",
+        "links": {}
+      },
+      {
+        "name": "Ignore Case",
+        "key": "ignore-case",
+        "ordinal": 5,
+        "regex": "[true/false]",
+        "default_value": "true",
+        "type": "bool",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:22:05.7300792+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:22:05.7300792+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.request-header.regex",
+    "name": "Request Header Regex",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 4,
+    "attributes": [
+      {
+        "name": "",
+        "key": "name",
+        "ordinal": 1,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:22:20.0672144+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "result",
+        "ordinal": 2,
+        "regex": "",
+        "default_value": "match",
+        "type": "string",
+        "required": true,
+        "options": [{
+          "key":"match",
+          "name":"Matches"
+        },{
+          "key":"nomatch",
+          "name":"Does not match"
+        }],
+        "created_at": "2015-02-10T23:22:20.0672144+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 4,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:22:20.0672144+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "ignore-case",
+        "ordinal": 5,
+        "regex": "",
+        "default_value": "",
+        "type": "bool",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:22:20.0672144+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:22:20.0672144+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.request-header.wildcard",
+    "name": "Request Header Wildcard",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 4,
+    "attributes": [
+      {
+        "name": "",
+        "key": "name",
+        "ordinal": 1,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:22:34.8723736+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "result",
+        "ordinal": 2,
+        "regex": "",
+        "default_value": "match",
+        "type": "string",
+        "required": true,
+        "options": [{
+          "key":"match",
+          "name":"Matches"
+        },{
+          "key":"nomatch",
+          "name":"Does not match"
+        }],
+        "created_at": "2015-02-10T23:22:34.8723736+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 4,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:22:34.8723736+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "ignore-case",
+        "ordinal": 5,
+        "regex": "",
+        "default_value": "",
+        "type": "bool",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:22:34.8723736+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:22:34.8723736+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.request-method",
+    "name": "Request Method",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 4,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:22:47.9146424+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:22:47.9146424+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.request-scheme",
+    "name": "Request Scheme",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 4,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:23:12.2986928+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:23:12.2986928+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.url-path.directory",
+    "name": "URL Path Directory",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 9,
+    "attributes": [
+      {
+        "name": "",
+        "key": "result",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "match",
+        "type": "string",
+        "required": true,
+        "options": [{
+          "key":"match",
+          "name":"Matches"
+        },{
+          "key":"nomatch",
+          "name":"Does not match"
+        }],
+        "created_at": "2015-02-10T23:23:31.6436848+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 2,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:23:31.6436848+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "regex": "",
+        "default_value": "",
+        "type": "bool",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:23:31.6436848+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "relative-to",
+        "ordinal": 5,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:23:31.6436848+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:23:31.6436848+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.url-path.extension",
+    "name": "URL Path Extension",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 9,
+    "attributes": [
+      {
+        "name": "",
+        "key": "result",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "match",
+        "type": "string",
+        "required": true,
+        "options": [{
+          "key":"match",
+          "name":"Matches"
+        },{
+          "key":"nomatch",
+          "name":"Does not match"
+        }],
+        "created_at": "2015-02-10T23:23:49.569004+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 2,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:23:49.569004+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "regex": "",
+        "default_value": "",
+        "type": "bool",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:23:49.569004+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:23:49.569004+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.url-path.filename",
+    "name": "URL Path Filename",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 9,
+    "attributes": [
+      {
+        "name": "",
+        "key": "result",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "match",
+        "type": "string",
+        "required": true,
+        "options": [{
+          "key":"match",
+          "name":"Matches"
+        },{
+          "key":"nomatch",
+          "name":"Does not match"
+        }],
+        "created_at": "2015-02-10T23:24:01.3008056+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 2,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:24:01.3008056+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "regex": "",
+        "default_value": "",
+        "type": "bool",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:24:01.3008056+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:24:01.3008056+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.url-path.literal",
+    "name": "URL Path Literal",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 9,
+    "attributes": [
+      {
+        "name": "",
+        "key": "result",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "match",
+        "type": "string",
+        "required": true,
+        "options": [{
+          "key":"match",
+          "name":"Matches"
+        },{
+          "key":"nomatch",
+          "name":"Does not match"
+        }],
+        "created_at": "2015-02-10T23:24:13.7190424+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 2,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:24:13.7190424+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "regex": "",
+        "default_value": "",
+        "type": "bool",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:24:13.7190424+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "relative-to",
+        "ordinal": 5,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:24:13.7190424+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:24:13.7190424+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.url-path.regex",
+    "name": "URL Path Regex",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 9,
+    "attributes": [
+      {
+        "name": "",
+        "key": "result",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "match",
+        "type": "string",
+        "required": true,
+        "options": [{
+          "key":"match",
+          "name":"Matches"
+        },{
+          "key":"nomatch",
+          "name":"Does not match"
+        }],
+        "created_at": "2015-02-10T23:24:27.8221656+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 2,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:24:27.8221656+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "regex": "",
+        "default_value": "",
+        "type": "bool",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:24:27.8221656+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:24:27.8221656+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.url-path.wildcard",
+    "name": "URL Path Wildcard",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 9,
+    "attributes": [
+      {
+        "name": "",
+        "key": "result",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "match",
+        "type": "string",
+        "required": true,
+        "options": [{
+          "key":"match",
+          "name":"Matches"
+        },{
+          "key":"nomatch",
+          "name":"Does not match"
+        }],
+        "created_at": "2015-02-10T23:24:41.1140472+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 2,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:24:41.1140472+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "regex": "",
+        "default_value": "",
+        "type": "bool",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:24:41.1140472+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "relative-to",
+        "ordinal": 5,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:24:41.1140472+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:24:41.1140472+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.url-query.literal",
+    "name": "URL Query Literal",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 9,
+    "attributes": [
+      {
+        "name": "",
+        "key": "result",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "match",
+        "type": "string",
+        "required": true,
+        "options": [{
+          "key":"match",
+          "name":"Matches"
+        },{
+          "key":"nomatch",
+          "name":"Does not match"
+        }],
+        "created_at": "2015-02-10T23:24:54.62434+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 2,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:24:54.62434+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "regex": "",
+        "default_value": "",
+        "type": "bool",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:24:54.62434+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:24:54.62434+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.url-query.param",
+    "name": "URL Query Parameter",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 9,
+    "attributes": [
+      {
+        "name": "",
+        "key": "key",
+        "ordinal": 1,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:25:07.416996+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "result",
+        "ordinal": 2,
+        "regex": "",
+        "default_value": "match",
+        "type": "string",
+        "required": true,
+        "options": [{
+          "key":"match",
+          "name":"Matches"
+        },{
+          "key":"nomatch",
+          "name":"Does not match"
+        }],
+        "created_at": "2015-02-10T23:25:07.416996+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 4,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:25:07.416996+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "ignore-case",
+        "ordinal": 5,
+        "regex": "",
+        "default_value": "",
+        "type": "bool",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:25:07.416996+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:25:07.416996+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.url-query.regex",
+    "name": "URL Query Regex",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 9,
+    "attributes": [
+      {
+        "name": "",
+        "key": "result",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "match",
+        "type": "string",
+        "required": true,
+        "options": [{
+          "key":"match",
+          "name":"Matches"
+        },{
+          "key":"nomatch",
+          "name":"Does not match"
+        }],
+        "created_at": "2015-02-10T23:25:19.58562+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 2,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:25:19.58562+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "regex": "",
+        "default_value": "",
+        "type": "bool",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:25:19.58562+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:25:19.58562+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.url-query.wildcard",
+    "name": "URL Query Wildcard",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 9,
+    "attributes": [
+      {
+        "name": "",
+        "key": "result",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "match",
+        "type": "string",
+        "required": true,
+        "options": [{
+          "key":"match",
+          "name":"Matches"
+        },{
+          "key":"nomatch",
+          "name":"Does not match"
+        }],
+        "created_at": "2015-02-10T23:25:43.7356584+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 2,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:25:43.7356584+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "regex": "",
+        "default_value": "",
+        "type": "bool",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:25:43.7356584+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:25:43.7356584+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.var.boolean",
+    "name": "Device Boolean",
+    "enabled": true,
+    "description": null,
+    "category_id": 6,
+    "attributes": [],
+    "created_at": "2015-02-10T23:14:13.2598512+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.var.integer",
+    "name": "Device Integer",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 6,
+    "attributes": [
+      {
+        "name": "",
+        "key": "key",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:26:05.9511976+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "compare",
+        "ordinal": 1,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:26:05.9511976+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 2,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:26:05.9511976+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:26:05.9511976+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.var.literal",
+    "name": "Device Literal",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 6,
+    "attributes": [
+      {
+        "name": "",
+        "key": "key",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:26:16.6377456+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "result",
+        "ordinal": 1,
+        "regex": "",
+        "default_value": "match",
+        "type": "string",
+        "required": true,
+        "options": [{
+          "key":"match",
+          "name":"Matches"
+        },{
+          "key":"nomatch",
+          "name":"Does not match"
+        }],
+        "created_at": "2015-02-10T23:26:16.6377456+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 2,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:26:16.6377456+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "regex": "",
+        "default_value": "",
+        "type": "bool",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:26:16.6377456+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:26:16.6377456+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.var.regex",
+    "name": "Device Regex",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 6,
+    "attributes": [
+      {
+        "name": "",
+        "key": "key",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:26:28.2447408+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "result",
+        "ordinal": 1,
+        "regex": "",
+        "default_value": "match",
+        "type": "string",
+        "required": true,
+        "options": [{
+          "key":"match",
+          "name":"Matches"
+        },{
+          "key":"nomatch",
+          "name":"Does not match"
+        }],
+        "created_at": "2015-02-10T23:26:28.2447408+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 2,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:26:28.2447408+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "regex": "",
+        "default_value": "",
+        "type": "bool",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:26:28.2447408+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:26:28.2447408+00:00",
+    "links": {}
+  },
+  {
+    "tag": "match.var.wildcard",
+    "name": "Device Wildcard",
+    "enabled": true,
+    "description": "sample description",
+    "category_id": 6,
+    "attributes": [
+      {
+        "name": "",
+        "key": "key",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:26:39.773732+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "result",
+        "ordinal": 1,
+        "regex": "",
+        "default_value": "match",
+        "type": "string",
+        "required": true,
+        "options": [{
+          "key":"match",
+          "name":"Matches"
+        },{
+          "key":"nomatch",
+          "name":"Does not match"
+        }],
+        "created_at": "2015-02-10T23:26:39.773732+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 2,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:26:39.773732+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "regex": "",
+        "default_value": "",
+        "type": "bool",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:26:39.773732+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:26:39.773732+00:00",
+    "links": {}
+  }
+]

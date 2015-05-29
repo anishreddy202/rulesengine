@@ -1,0 +1,39 @@
+<section class="feed">
+  <div>
+    <h4 style="margin-bottom: 18px">
+      Deploy Requests
+      <span ng-if="loading" class="pull-right fa fa-spinner fa-spin"></span>
+    </h4>
+  </div>
+
+  <div class="rich-list">
+
+    <ul class="list-group">
+      <li ng-repeat="item in collection | orderBy: '-updated_at' | limitTo: maxItems || 50" class="list-group-item">
+
+        <h5 class="timeline-item-heading">
+          <deploy-request-icon  item="item"></deploy-request-icon>
+          &nbsp;
+          <a ui-sref="main.deploy_requests.show({ id: item.id })">
+            {{ item.policy_name }}
+            <span class="fa fa-long-arrow-right"></span>
+            {{ item.environment_id === env.Staging ? 'staging' : 'production' }}
+          </a>
+        </h5>
+        <p>
+          <deploy-request-label item="item"></deploy-request-label>
+          &nbsp;
+        <span class="timeline-item-date">
+          {{ item.updated_at | date: 'medium' }}
+        </span>
+        </p>
+        <p class="timeline-item-description text-muted">
+          {{ item.description }}
+        </p>
+      </li>
+    </ul>
+
+
+  </div>
+</div>
+</section>

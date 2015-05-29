@@ -1,0 +1,24 @@
+<fieldset>
+  <legend>{{ attr.name ? attr.name : attr.key }}</legend>
+  <div class="btn-group"
+       ng-init="attr.selected = attr.selected ? attr.selected : getItemByKey(attr.options, 'key', attr.value? attr.value : attr.default_value)">
+    <button
+      type="button"
+      class="btn btn-default dropdown-toggle"
+      data-toggle="dropdown">
+      {{ attr.selected ? attr.selected.name : 'Select' }}
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li ng-repeat="option in attr.options">
+        <a ng-click="attr.value = option.key + attr.txt_value;attr.selected=option;">{{ option.name }}</a>
+      </li>
+    </ul>
+    <input
+      id="arg-input-{{attr.key}}-1"
+      class="form-control"
+      type="text"
+      ng-blur="attr.value = attr.selected.key + attr.txt_value"
+      ng-model='attr.txt_value'/>
+  </div>
+</fieldset>

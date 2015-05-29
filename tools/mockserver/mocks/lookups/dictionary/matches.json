@@ -1,0 +1,965 @@
+[
+  {
+    "tag": "match.always",
+    "name": "Always",
+    "category_id": 10,
+    "attributes": []
+  },
+  {
+    "tag": "match.asn",
+    "name": "AS Number",
+    "category_id": 7,
+    "attributes": [
+      {
+        "name": "result",
+        "key": "result",
+        "ordinal": 0,
+        "options": []
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 2,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.cdn-origin",
+    "name": "CDN Origin",
+    "category_id": 8,
+    "attributes": [
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 0,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.client-address",
+    "name": "Client IP Address",
+    "category_id": 10,
+    "attributes": [
+      {
+        "name": "result",
+        "key": "result",
+        "ordinal": 0,
+        "options": []
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 1,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.cookie.param",
+    "name": "Cookie Parameter",
+    "category_id": 5,
+    "attributes": [
+      {
+        "name": "key",
+        "key": "key",
+        "ordinal": 1,
+        "options": []
+      },
+      {
+        "name": "result",
+        "key": "result",
+        "ordinal": 2,
+        "options": []
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 4,
+        "options": []
+      },
+      {
+        "name": "ignore-case",
+        "key": "ignore-case",
+        "ordinal": 5,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.cookie.regex",
+    "name": "Cookie Parameter Regex",
+    "category_id": 5,
+    "attributes": [
+      {
+        "name": "key",
+        "key": "key",
+        "ordinal": 1,
+        "options": []
+      },
+      {
+        "name": "result",
+        "key": "result",
+        "ordinal": 2,
+        "options": []
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 4,
+        "options": []
+      },
+      {
+        "name": "ignore-case",
+        "key": "ignore-case",
+        "ordinal": 5,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.country",
+    "name": "Country",
+    "category_id": 7,
+    "attributes": [
+      {
+        "name": "result",
+        "key": "result",
+        "ordinal": 0,
+        "options": []
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 2,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.customer-origin",
+    "name": "Customer Origin",
+    "category_id": 8,
+    "attributes": [
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 0,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.geo.boolean",
+    "name": "GEO Boolean",
+    "category_id": 7,
+    "attributes": [
+      {
+        "name": "key",
+        "key": "key",
+        "ordinal": 0,
+        "options": []
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 1,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.geo.integeer",
+    "name": "GEO Integer",
+    "category_id": 7,
+    "attributes": [
+      {
+        "name": "key",
+        "key": "key",
+        "ordinal": 0,
+        "options": [
+          {
+            "key": "geo_latitude",
+            "name": "Latitude"
+          },
+          {
+            "key": "geo_longitude",
+            "name": "Longitude"
+          }
+        ]
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 1,
+        "options": []
+      },
+      {
+        "name": "compare",
+        "key": "compare",
+        "ordinal": 2,
+        "options": [
+          {
+            "key": "<=",
+            "name": "<="
+          },
+          {
+            "key": "=",
+            "name": "="
+          },
+          {
+            "key": ">",
+            "name": ">"
+          },
+          {
+            "key": ">=",
+            "name": ">="
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "tag": "match.geo.literal",
+    "name": "GEO Literal",
+    "category_id": 7,
+    "attributes": [
+      {
+        "name": "key",
+        "key": "key",
+        "ordinal": 0,
+        "options": [
+          {
+            "key": "geo_as_number",
+            "name": "AS Number"
+          },
+          {
+            "key": "geo_country",
+            "name": "Country"
+          },
+          {
+            "key": "geo_dma_code",
+            "name": "DMA Code"
+          },
+          {
+            "key": "geo_metro_code",
+            "name": "Metro Code"
+          },
+          {
+            "key": "geo_region_code",
+            "name": "Region Code"
+          }
+        ]
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 1,
+        "options": []
+      },
+      {
+        "name": "result",
+        "key": "result",
+        "ordinal": 2,
+        "options": [
+          {
+            "key": "geo_matches",
+            "name": "Matches"
+          },
+          {
+            "key": "geo_does_not_matches",
+            "name": "Does Not Matches"
+          }
+        ]
+      },
+      {
+        "name": "ignore-case",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "options": [
+          {
+            "key": "true",
+            "name": "True"
+          },
+          {
+            "key": "false",
+            "name": "False"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "tag": "match.geo.regex",
+    "name": "GEO Regex",
+    "category_id": 7,
+    "attributes": [
+      {
+        "name": "key",
+        "key": "key",
+        "ordinal": 0,
+        "options": [
+          {
+            "key": "geo_city_name",
+            "name": "City Name"
+          }
+        ]
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 1,
+        "options": []
+      },
+      {
+        "name": "result",
+        "key": "result",
+        "ordinal": 2,
+        "options": []
+      },
+      {
+        "name": "ignore-case",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.geo.wildcard",
+    "name": "GEO Wildcard",
+    "category_id": 7,
+    "attributes": [
+      {
+        "name": "key",
+        "key": "key",
+        "ordinal": 0,
+        "options": []
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 1,
+        "options": []
+      },
+      {
+        "name": "result",
+        "key": "result",
+        "ordinal": 2,
+        "options": []
+      },
+      {
+        "name": "ignore-case",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.host",
+    "name": "Edge Cname",
+    "category_id": 10,
+    "attributes": [
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 0,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.referring-domain",
+    "name": "Referring Domain",
+    "category_id": 10,
+    "attributes": [
+      {
+        "name": "result",
+        "key": "result",
+        "ordinal": 0,
+        "options": []
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 2,
+        "options": []
+      },
+      {
+        "name": "ignore-case",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.request-header.literal",
+    "name": "Request Header Literal",
+    "category_id": 4,
+    "attributes": [
+      {
+        "name": "Name",
+        "key": "name",
+        "ordinal": 1,
+        "options": []
+      },
+      {
+        "name": "Result",
+        "key": "result",
+        "ordinal": 2,
+        "options": []
+      },
+      {
+        "name": "Value",
+        "key": "value",
+        "ordinal": 4,
+        "options": []
+      },
+      {
+        "name": "Ignore Case",
+        "key": "ignore-case",
+        "ordinal": 5,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.request-header.regex",
+    "name": "Request Header Regex",
+    "category_id": 4,
+    "attributes": [
+      {
+        "name": "name",
+        "key": "name",
+        "ordinal": 1,
+        "options": []
+      },
+      {
+        "name": "result",
+        "key": "result",
+        "ordinal": 2,
+        "options": []
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 4,
+        "options": []
+      },
+      {
+        "name": "ignore-case",
+        "key": "ignore-case",
+        "ordinal": 5,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.request-header.wildcard",
+    "name": "Request Header Wildcard",
+    "category_id": 4,
+    "attributes": [
+      {
+        "name": "name",
+        "key": "name",
+        "ordinal": 1,
+        "options": []
+      },
+      {
+        "name": "result",
+        "key": "result",
+        "ordinal": 2,
+        "options": []
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 4,
+        "options": []
+      },
+      {
+        "name": "ignore-case",
+        "key": "ignore-case",
+        "ordinal": 5,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.request-method",
+    "name": "Request Method",
+    "category_id": 4,
+    "attributes": [
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 0,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.request-scheme",
+    "name": "Request Scheme",
+    "category_id": 4,
+    "attributes": [
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 0,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.url-path.directory",
+    "name": "URL Path Directory",
+    "category_id": 9,
+    "attributes": [
+      {
+        "name": "result",
+        "key": "result",
+        "ordinal": 0,
+        "options": []
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 2,
+        "options": []
+      },
+      {
+        "name": "ignore-case",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "options": []
+      },
+      {
+        "name": "relative-to",
+        "key": "relative-to",
+        "ordinal": 5,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.url-path.extension",
+    "name": "URL Path Extension",
+    "category_id": 9,
+    "attributes": [
+      {
+        "name": "result",
+        "key": "result",
+        "ordinal": 0,
+        "options": []
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 2,
+        "options": []
+      },
+      {
+        "name": "ignore-case",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.url-path.filename",
+    "name": "URL Path Filename",
+    "category_id": 9,
+    "attributes": [
+      {
+        "name": "result",
+        "key": "result",
+        "ordinal": 0,
+        "options": []
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 2,
+        "options": []
+      },
+      {
+        "name": "ignore-case",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.url-path.literal",
+    "name": "URL Path Literal",
+    "category_id": 9,
+    "attributes": [
+      {
+        "name": "result",
+        "key": "result",
+        "ordinal": 0,
+        "options": []
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 2,
+        "options": []
+      },
+      {
+        "name": "ignore-case",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "options": []
+      },
+      {
+        "name": "relative-to",
+        "key": "relative-to",
+        "ordinal": 5,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.url-path.regex",
+    "name": "URL Path Regex",
+    "category_id": 9,
+    "attributes": [
+      {
+        "name": "result",
+        "key": "result",
+        "ordinal": 0,
+        "options": []
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 2,
+        "options": []
+      },
+      {
+        "name": "ignore-case",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.url-path.wildcard",
+    "name": "URL Path Wildcard",
+    "category_id": 9,
+    "attributes": [
+      {
+        "name": "result",
+        "key": "result",
+        "ordinal": 0,
+        "options": []
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 2,
+        "options": []
+      },
+      {
+        "name": "ignore-case",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "options": []
+      },
+      {
+        "name": "relative-to",
+        "key": "relative-to",
+        "ordinal": 5,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.url-query.literal",
+    "name": "URL Query Literal",
+    "category_id": 9,
+    "attributes": [
+      {
+        "name": "result",
+        "key": "result",
+        "ordinal": 0,
+        "options": []
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 2,
+        "options": []
+      },
+      {
+        "name": "ignore-case",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.url-query.param",
+    "name": "URL Query Parameter",
+    "category_id": 9,
+    "attributes": [
+      {
+        "name": "key",
+        "key": "key",
+        "ordinal": 1,
+        "options": []
+      },
+      {
+        "name": "result",
+        "key": "result",
+        "ordinal": 2,
+        "options": []
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 4,
+        "options": []
+      },
+      {
+        "name": "ignore-case",
+        "key": "ignore-case",
+        "ordinal": 5,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.url-query.regex",
+    "name": "URL Query Regex",
+    "category_id": 9,
+    "attributes": [
+      {
+        "name": "result",
+        "key": "result",
+        "ordinal": 0,
+        "options": []
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 2,
+        "options": []
+      },
+      {
+        "name": "ignore-case",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.url-query.wildcard",
+    "name": "URL Query Wildcard",
+    "category_id": 9,
+    "attributes": [
+      {
+        "name": "result",
+        "key": "result",
+        "ordinal": 0,
+        "options": []
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 2,
+        "options": []
+      },
+      {
+        "name": "ignore-case",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.var.boolean",
+    "name": "Device Boolean",
+    "category_id": 6,
+    "attributes": [
+      {
+        "name": "key",
+        "key": "key",
+        "ordinal": 0,
+        "options": [
+          {
+            "key": "wurfl_cap_is_wireless_device",
+            "name": "Is Wireless Device"
+          },
+          {
+            "key": "wurfl_cap_is_tablet",
+            "name": "Is Tablet"
+          },
+          {
+            "key": "wurfl_cap_image_inlining",
+            "name": "Image Inlining"
+          },
+          {
+            "key": "wurfl_cap_dual_orientation",
+            "name": "Dual Orientation"
+          },
+          {
+            "key": "wurfl_cap_progressive_download",
+            "name": "Progressive Download"
+          },
+          {
+            "key": "wurfl_cap_is_smarttv",
+            "name": "Is Smart TV"
+          },
+          {
+            "key": "wurfl_vcap_is_android",
+            "name": "Is Android"
+          },
+          {
+            "key": "wurfl_vcap_is_ios",
+            "name": "Is IOS"
+          },
+          {
+            "key": "wurfl_cap_is_smartphone",
+            "name": "Is Smartphone"
+          }
+        ]
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 1,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.var.integer",
+    "name": "Device Integer",
+    "category_id": 6,
+    "attributes": [
+      {
+        "name": "key",
+        "key": "key",
+        "ordinal": 0,
+        "options": []
+      },
+      {
+        "name": "compare",
+        "key": "compare",
+        "ordinal": 1,
+        "options": []
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 2,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.var.literal",
+    "name": "Device Literal",
+    "category_id": 6,
+    "attributes": [
+      {
+        "name": "key",
+        "key": "key",
+        "ordinal": 0,
+        "options": []
+      },
+      {
+        "name": "result",
+        "key": "result",
+        "ordinal": 1,
+        "options": []
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 2,
+        "options": []
+      },
+      {
+        "name": "ignore-case",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.var.regex",
+    "name": "Device Regex",
+    "category_id": 6,
+    "attributes": [
+      {
+        "name": "key",
+        "key": "key",
+        "ordinal": 0,
+        "options": []
+      },
+      {
+        "name": "result",
+        "key": "result",
+        "ordinal": 1,
+        "options": []
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 2,
+        "options": []
+      },
+      {
+        "name": "ignore-case",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "options": []
+      }
+    ]
+  },
+  {
+    "tag": "match.var.wildcard",
+    "name": "Device Wildcard",
+    "category_id": 6,
+    "attributes": [
+      {
+        "name": "key",
+        "key": "key",
+        "ordinal": 0,
+        "options": []
+      },
+      {
+        "name": "result",
+        "key": "result",
+        "ordinal": 1,
+        "options": []
+      },
+      {
+        "name": "value",
+        "key": "value",
+        "ordinal": 2,
+        "options": []
+      },
+      {
+        "name": "ignore-case",
+        "key": "ignore-case",
+        "ordinal": 3,
+        "options": []
+      }
+    ]
+  }
+]

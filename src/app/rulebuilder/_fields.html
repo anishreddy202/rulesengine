@@ -1,0 +1,116 @@
+<!--EDIT MODE-->
+
+<div class="form-group">
+  <fieldset>
+    <span ng-if="node.fieldsLoading" class="fa fa-spinner fa-spin form-loading"></span>
+
+  </fieldset>
+</div>
+
+<div ng-if="rule.editMode"
+  class="form-group"
+  ng-repeat="attr in node.attributes | orderBy: 'ordinal'"
+  ng-init="attr.value = attr.value ? attr.value: attr.default_value"
+  ng-class="{'has-error': attr.isValid === false && resetValid(attr, rule)}">
+
+  <!-- TEXTBOX -->
+  <fieldset ng-if="controlType(attr) === 'input'">
+    <legend>{{ attr.name ? attr.name : attr.key }}</legend>
+    <input
+      id="arg-input-{{attr.key}}"
+      class="form-control input-sm"
+      type="text"
+      ng-disabled="!rule.editMode"
+      ng-model='attr.value'/>
+  </fieldset>
+
+  <!-- TEXTAREA -->
+  <fieldset ng-if="controlType(attr) === 'textarea'">
+    <legend>{{ attr.name ? attr.name : attr.key }}</legend>
+    <textarea
+      id="arg-input-{{attr.key}}"
+      class="form-control input-sm"
+      disabled="!rule.editMode"
+      ng-disabled="!rule.editMode"
+      ng-model='attr.value'>
+    </textarea>
+  </fieldset>
+
+  <!-- DROPDOWN -->
+  <fieldset ng-if="controlType(attr) === 'select'">
+    <legend>{{ attr.name ? attr.name : attr.key }}</legend>
+    <select class="form-control input-sm"
+            ng-options="option.value as option.name for option in attr.options"
+            ng-model="attr.value">
+      <option value="">Select </option>
+    </select>
+  </fieldset>
+
+  <!-- ARRAY STRING - DROPDOWN + TEXT -->
+  <combo-text ng-if="controlType(attr) === 'combo'" attr="attr"></combo-text>
+
+  <!-- SINGLE CHECKBOX -->
+  <fieldset ng-if="controlType(attr) === 'check'">
+    <legend>{{ attr.name ? attr.name : attr.key }}</legend>
+    <div class="checkbox" ng-init="attr.value = attr.value ? attr.value: attr.default_value">
+      <label>
+        <toggle-switch
+          on-label="yes"
+          off-label="no"
+          class="switch-small"
+          model="attr.value">
+        <toggle-switch>
+      </label>
+    </div>
+  </fieldset>
+
+  <!-- MULTI CHECKBOX -->
+  <fieldset ng-if="controlType(attr) === 'multicheck'">
+    <legend>{{ attr.name ? attr.name : attr.key }}</legend>
+    <ul class="list-unstyled">
+      <li class="col-md-6" style="padding:0px;" ng-repeat="option in attr.options">
+        <div class="checkbox">
+          <label>
+            <input
+              ng-disabled="!rule.editMode"
+              type="checkbox"
+              ng-model="option.selected">
+            {{option.name}}
+          </label>
+        </div>
+      </li>
+    </ul>
+  </fieldset>
+
+</div>
+
+<!-- VIEW MODE -->
+<div ng-if="!rule.editMode"
+     class="form-group"
+     ng-repeat="attr in node.attributes | orderBy: 'ordinal' track by attr.key">
+  <fieldset>
+    <legend>{{ attr.name ? attr.name : attr.key }}</legend>
+    <span class="hide">{{attr.value}}</span>
+
+    <div ng-if="attr.type === 'BOOL'">
+      <toggle-switch
+        ng-init="attr.value = (attr.value === true || attr.value === 'true' ? true : false)"
+        class="switch-small"
+        on-label="yes"
+        off-label="no"
+        model="attr.value"
+        is-disabled="true">
+      <toggle-switch>
+    </div>
+
+    <div ng-if="attr.type !== 'BOOL'">
+      <input
+        class="form-control input-sm"
+        ng-disabled="true"
+        value="{{ attr.options && attr.options.length > 0 ?
+          (item = getItemByKey(attr.options,'value', attr.value)) ? item.name :
+          attr.value : attr.value }}" />
+    </div>
+  </fieldset>
+</div>
+

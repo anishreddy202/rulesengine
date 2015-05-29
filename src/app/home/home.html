@@ -1,0 +1,166 @@
+<div class="page-header">
+  <ol class="breadcrumb">
+    <li class="active">
+      Rules Engine
+    </li>
+  </ol>
+  <!-- TODO: Add back once links are available -->
+
+  <div class="btn-group pull-right">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      <span class="fa fa-book"> <span class="caret"></span>
+    </span></button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a target="_blank" href="/uploads/ubers/1/docs/en-US/webhelp/b/CDNHelpCenter/default.htm#HTTP_Rules_Engine/What_is_a_Rule.htm">HTTP Rules Engine</a></li>
+      <li><a target="_blank" href="/uploads/ubers/1/docs/en-US/webhelp/w/CDNHelpCenter/default.htm#HTTP_Rules_Engine/What_is_a_Rule.htm">What is a Rule?</a></li>
+      <li><a target="_blank" href="/uploads/ubers/1/docs/en-US/webhelp/b/CDNHelpCenter/default.htm#HTTP_Rules_Engine/Matches_Features.htm">Creating a Rule</a></li>
+      <li><a target="_blank" href="/uploads/ubers/1/docs/en-US/webhelp/w/CDNHelpCenter/default.htm#HTTP_Rules_Engine/Matches_Features.htm">Matches and Features</a></li>
+    </ul>
+  </div>
+  <h2>
+    Overview
+  </h2>
+</div>
+
+<alert-msg></alert-msg>
+
+<div class="row home">
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-xs-6">
+        <h3>
+          Production
+        </h3>
+
+        <div ng-repeat="d in productionDeployments = (deployRequests |
+          filter : { environment_id: 1, state_id: 4 } : true |
+          orderBy : '-updated_at' |
+          limitTo : 1)">
+          <div class="callout callout-default" ng-show="d">
+            <h4>
+              <a ui-sref="main.policies.show.rulebuilder({ id: d.policy_id })">
+                {{ d.policy_name }}
+              </a>
+              &nbsp;
+              <span ng-if="loading" class="pull-right fa fa-spinner fa-spin"></span>
+            </h4>
+            <p class="text-muted">
+              In production since {{ d.updated_at | date : 'medium' }}
+            </p>
+            <p>
+              <a ui-sref="main.deploy_requests.show({ id: d.id })">
+                View deploy request
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="callout callout-default" ng-if="!productionDeployments.length">
+          <h4>No policy deployed</h4>
+        </div>
+      </div>
+
+      <div class="col-xs-6">
+        <h3>
+          Staging
+        </h3>
+
+        <div ng-repeat="d in stagingDeployments = (deployRequests |
+          filter : { environment_id: 2, state_id: 4 } : true |
+          orderBy : '-updated_at' |
+          limitTo : 1)">
+          <div class="callout callout-default" ng-show="d">
+            <h4>
+              <a ui-sref="main.policies.show.rulebuilder({ id: d.policy_id })">
+                {{ d.policy_name }}
+              </a>
+              &nbsp;
+              <span ng-if="loading" class="pull-right fa fa-spinner fa-spin"></span>
+            </h4>
+            <p class="text-muted">
+              In staging since {{ d.updated_at | date : 'medium' }}
+            </p>
+            <p>
+              <a ui-sref="main.deploy_requests.show({ id: d.id })">
+                View deploy request
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="callout callout-default" ng-if="!stagingDeployments.length">
+          <h4>No policy deployed</h4>
+        </div>
+      </div>
+    </div>
+
+
+    <ul class="nav nav-tabs" style="margin-top:40px;">
+      <li class="active" data-toggle="tab" data-target="#tab-drafts" ng-click="currentTab = 'drafts'">
+        <a>
+          <span class="fa fa-pencil-square-o"></span>
+          Drafts
+        </a>
+      </li>
+      <li data-toggle="tab" data-target="#tab-policies" ng-click="currentTab = 'policies'">
+        <a>
+          <span class="fa fa-lock"></span>
+          Policies
+        </a>
+      </li>
+      <li data-toggle="tab" data-target="#tab-archied_policies" ng-click="currentTab = 'archive'">
+        <a>
+          <span class="fa fa-file-archive-o"></span>
+          Archive
+        </a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="tab-drafts" ng-controller="draftsIndexCtrl">
+        <ng-include src="'/rules/drafts/drafts-index-list.html'"
+          ng-if="!currentTab || currentTab == 'drafts'" onload="maxItems=recentItemsCap"></ng-include>
+        <p>
+          <a class="btn btn-link" ui-sref="main.drafts.index" ng-show="collection.length > recentItemsCap">
+            <i>more &hellip;</i>
+          </a>
+        </p>
+      </div>
+
+      <div class="tab-pane" id="tab-policies" ng-controller="policiesIndexCtrl">
+        <ng-include src="'/rules/policies/policies-index-list.html'"
+          ng-if="currentTab == 'policies'"
+          onload="filterParam={is_archived:false};maxItems=recentItemsCap;"></ng-include>
+        <p>
+          <a class="btn btn-link" ui-sref="main.policies.index" ng-show="collection.length > recentItemsCap">
+            <i>more &hellip;</i>
+          </a>
+        </p>
+      </div>
+
+      <div class="tab-pane" id="tab-archied_policies" ng-controller="policiesIndexCtrl">
+        <ng-include src="'/rules/policies/policies-index-list.html'"
+                    ng-if="currentTab == 'archive'"
+                    onload="filterParam={is_archived:true};maxItems=recentItemsCap;"></ng-include>
+        <p>
+          <a class="btn btn-link" ui-sref="main.policies.index" ng-show="collection.length > recentItemsCap">
+            <i>more &hellip;</i>
+          </a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div ng-controller="deployRequestsIndexCtrl">
+      <ng-include src="'/rules/deploy-requests/deploy-requests-feed.html'"
+        onload="maxItems=recentItemsCap">
+      </ng-include>
+      <p>
+        <a class="btn btn-link" ui-sref="main.deploy_requests.index" ng-show="collection.length > recentItemsCap">
+          <i>more &hellip;</i>
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+

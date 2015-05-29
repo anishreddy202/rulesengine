@@ -1,0 +1,38 @@
+<div class="_select" ng-init="parentNodes = parentTree">
+
+  <validator-msg errors="selectNode.errors" show-error="!rule.editMode"></validator-msg>
+
+  <h3 class="pull-left heading">
+    <span class="text-info">{{selectNode.name}}</span>
+  </h3>
+
+  <div class="pull-right" ng-if="rule.editMode || $root.createMode">
+    <div class="btn-toolbar">
+      <div class="btn-group">
+        <div class="btn text-muted" ng-click="removeNode(selectNode, parentNodes)">
+          <span class="fa fa-times-circle"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div class="panel panel-default" ng-repeat="sNode in parentTree = selectNode.nodes">
+    <!-- BEGIN MATCH -->
+    <div class="panel-heading">
+      <ng-include
+        src="'/rules/rulebuilder/_match.html'"
+        ng-init="matchNode = sNode; selectFirst = true;"></ng-include>
+    </div>
+    <!-- END MATCH -->
+  </div>
+  <div class="clearfix"></div>
+  <div class="panel-body" ng-if="rule.editMode || $root.createMode">
+    <button type="button"
+            class="btn btn-default"
+            ng-click="addNode(NODETYPE.MATCH, selectNode)">
+      <span class="fa fa-plus"></span> {{selectNode.nodes.length === 0 ? 'if' : 'else if'}}
+    </button>
+  </div>
+</div>

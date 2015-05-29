@@ -1,0 +1,128 @@
+<div class="rulebuilder" ng-controller="rulebuilderCtrl">
+  <div id="sortable-container">
+    <div as-sortable="sortableOptions" ng-model="$parent.rules">
+      <div ng-repeat="rule in $parent.rules" ng-init="rule.expanded = ($index == 0 || rule.isNew)" as-sortable-item>
+
+          <div class="panel panel-default rule-block panel-collapse" >
+            <div class="panel-heading rule-heading">
+              <h3>
+                <div class="pull-right" ng-if="$root.draftView">
+                  <div class="btn-toolbar">
+                    <div class="btn-group">
+
+                      <a class="btn btn-link btn-sm text-muted"
+                         ng-if="!$parent.createMode && !rule.editMode && $parent.rules.length > 1"
+                         ng-mousedown="rule.expanded = false"
+                         ng-disabled="current_rule && current_rule._id != rule._id" as-sortable-item-handle>
+                        <span class="fa fa-arrows"></span>
+                      </a>
+
+                      <a class="btn btn-link btn-sm text-muted"
+                         ng-if="!$root.createMode && !rule.editMode && !rule.isNew"
+                         ng-disabled="current_rule && current_rule._id != rule._id"
+                         ng-click="markDelete(rule)">
+                        <span class="fa fa-trash-o"></span>
+                      </a>
+
+                      <a class="btn btn-link btn-sm text-muted"
+                         ng-click="editRule(rule)"
+                         ng-if="!$parent.createMode && !rule.editMode"
+                         ng-disabled="current_rule && current_rule._id != rule._id">
+                        <span class="fa fa-pencil"></span>
+                      </a>
+                    </div>
+                    <!-- end btn-group -->
+                    <div class="btn-group" ng-if="!$parent.createMode && rule.editMode">
+                      <a class="btn btn-default" ng-click="cancelEditing(rule)">
+                        <span class="fa fa-cancel"></span>
+                        Cancel
+                      </a>
+                    </div>
+                    <!-- end btn-group -->
+                    <div class="btn-group" ng-if="!$parent.createMode && rule.editMode">
+                      <a class="btn btn-primary" ng-click="saveRule(rule,$parent)">
+                        Save
+                      </a>
+                    </div>
+                    <!-- end btn-group -->
+                  </div>
+                  <!-- end btn-toolbar -->
+                </div>
+                <!-- end pull-right -->
+                <span class="rule-heading">rule {{ $index + 1 }}</span>
+                <a class="btn btn-link"
+                   ng-click="rule.expanded = !rule.expanded">
+            <span class="text-muted fa"
+                  ng-class="{'fa-angle-down':rule.expanded , 'fa-angle-right':!rule.expanded}"
+              ></span>
+                </a>
+                <small>{{rule.description}}</small>
+              </h3>
+            </div>
+            <!-- end rule header -->
+
+            <div id="rule-{{$index}}"
+                 class="panel-body panel-collapse collapse" ng-class="{'in': rule.expanded }">
+              <div class="form-group" ng-if="rule.editMode">
+                <input type="text"
+                       class="form-control"
+                       placeholder="Rule Description (optional)"
+                       ng-model="rule.description"/>
+              </div>
+              <div class="btn-group pull-left"
+                   ng-if="(rule.editMode || $root.createMode)">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                  <span class="fa fa-plus fa-lg"></span> &nbsp;
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a ng-if="!rule.nodes || (rule.nodes | filter:{'type':NODETYPE.SELECT}).length == 0"
+                         ng-click="addNode(NODETYPE.SELECT, rule)">Select First Match</a></li>
+                  <li><a ng-click="addNode(NODETYPE.MATCH, rule)">Match</a></li>
+                </ul>
+              </div>
+
+              <div class="_indent"
+                   ng-repeat="node in parentTree = rule.nodes | orderBy: 'type'"
+                   ng-class="{ '_less': !rule.editMode }">
+                <ng-include
+                  ng-if="node.type === NODETYPE.SELECT"
+                  src="'/rules/rulebuilder/_select.html'"
+                  ng-init="selectNode = node; ">
+                </ng-include>
+                <ng-include
+                  ng-if="node.type === NODETYPE.MATCH"
+                  src="'/rules/rulebuilder/_match.html'"
+                  ng-init="matchNode = node; ">
+                </ng-include>
+              </div>
+              <div ng-if="rule.toDelete">
+                <div class="overlay"></div>
+                <div class="modal-container">
+                  <button type="button" class="btn btn-default btn-lg" ng-click="rule.toDelete = false">Cancel</button>
+                  <button type="button" class="btn btn-primary btn-lg" ng-click="deleteRule($index, $parent)">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+      </div>
+    </div>
+  </div>
+  <!-- END RULE REPEAT -->
+
+  <div ng-if="$root.draftView">
+    <a role="button" class="btn btn-default"
+       ng-disabled = "$root.ruleEditing"
+       ng-click="addRule($parent)">
+      <span class="fa fa-plus"></span>
+      Rule
+    </a>
+  </div>
+
+  <confirm-save-dialog></confirm-save-dialog>
+
+</div>
+
+

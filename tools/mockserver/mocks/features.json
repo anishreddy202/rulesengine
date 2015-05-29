@@ -1,0 +1,1291 @@
+[
+  {
+    "tag": "feature.allowed-backend-tags",
+    "name": "Origin Tags",
+    "enabled": true,
+    "category_id": 12,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 1,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:32:32.9134408+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:32:32.9134408+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.allow-error-failover",
+    "name": "Customer Origin Failover on TCP Error",
+    "enabled": true,
+    "category_id": 12,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:32:52.7264568+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:32:52.7264568+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.bloom-filter-enable",
+    "name": "Second Hit Caching",
+    "enabled": true,
+    "category_id": 12,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:33:14.23996+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:33:14.23996+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.bwlimit",
+    "name": "Bandwidth Parameters",
+    "enabled": true,
+    "category_id": 12,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "true",
+        "type": "string",
+        "required": true,
+        "options": [{"key":"enabled","name":"Enabled"},
+          {"key":"disabled","name":"Disabled"}],
+        "created_at": "2015-02-10T23:33:31.1044248+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:33:31.1044248+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.bypass-cache",
+    "name": "Bypass Cache",
+    "enabled": true,
+    "category_id": 12,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:33:50.5430216+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:33:50.5430216+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.cacheable-status-codes",
+    "name": "Set Cacheable Status Codes",
+    "enabled": true,
+    "category_id": 12,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:34:05.3169792+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:34:05.3169792+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.cache-control-treatment",
+    "name": "Cache-Control Header Treatment",
+    "enabled": true,
+    "category_id": 12,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:34:19.0456832+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:34:19.0456832+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.cache-fill-check-downstream-range",
+    "name": "Cache Fill Check Downstream Range",
+    "enabled": true,
+    "category_id": 12,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:34:44.8650072+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:34:44.8650072+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.cache-fill-max-rate",
+    "name": "Cache Fill Max Rate",
+    "enabled": true,
+    "category_id": 12,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:35:10.231908+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:35:10.231908+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.cache-fill-spawn-subrequest-for-miss",
+    "name": "Cache Fill Spawn Subrequest for miss",
+    "enabled": true,
+    "category_id": 13,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:35:34.3507448+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:35:34.3507448+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.cache-fill-wait-msecs",
+    "name": "Cache Fill Wait",
+    "enabled": true,
+    "category_id": 13,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:35:48.141852+00:00",
+        "links": {}
+      },
+      {
+        "name": "",
+        "key": "units",
+        "ordinal": 1,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:35:48.141852+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:35:48.141852+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.cache-methods",
+    "name": "Cacheable HTTP Methods",
+    "enabled": true,
+    "category_id": 13,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:36:01.8237536+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.cache-prevalidate",
+    "name": "Prevalidate Cached Content",
+    "enabled": true,
+    "category_id": 13,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.cache-queries",
+    "name": "Cache-Key Query String",
+    "enabled": true,
+    "category_id": 13,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.comment",
+    "name": "Comment",
+    "enabled": true,
+    "category_id": 13,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.complete-cache-fill",
+    "name": "Complete Cache Fill",
+    "enabled": true,
+    "category_id": 13,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.compress-filetypes",
+    "name": "Compress File Types",
+    "enabled": true,
+    "category_id": 13,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.connection-bandwidth-throttling",
+    "name": "Bandwidth Throttling",
+    "enabled": true,
+    "category_id": 13,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.continue-cache-fill",
+    "name": "Partial Cache Sharing",
+    "enabled": true,
+    "category_id": 13,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.custom-log-field-1",
+    "name": "Custom Log Field 1",
+    "enabled": true,
+    "category_id": 14,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.default-internal-maxage",
+    "name": "Default Internal Max-Age",
+    "enabled": true,
+    "category_id": 14,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.deny-access",
+    "name": "Deny Access (403)",
+    "enabled": true,
+    "category_id": 14,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.ectoken.query-param",
+    "name": "Token Auth Parameter",
+    "enabled": true,
+    "category_id": 14,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.expires-treatment",
+    "name": "Expires Header Treatment",
+    "enabled": true,
+    "category_id": 14,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.external-ttl",
+    "name": "External Max-Age",
+    "enabled": true,
+    "category_id": 14,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.follow-redirects",
+    "name": "Follow Redirects",
+    "enabled": true,
+    "category_id": 14,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.force-internal-maxage",
+    "name": "Force Internal Max-Age",
+    "enabled": true,
+    "category_id": 14,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.gzip-validation",
+    "name": "Compressed Content Validation",
+    "enabled": true,
+    "category_id": 14,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.h264-streaming2.extensions",
+    "name": "H.264 Support (HTTP Progressive Download)",
+    "enabled": true,
+    "category_id": 14,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.honor-nocache-request",
+    "name": "Honor No-Cache Request",
+    "enabled": true,
+    "category_id": 14,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.http-log-retrieval",
+    "name": "Raw Log File Retrieval",
+    "enabled": true,
+    "category_id": 14,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.ignore-origin-nocache",
+    "name": "Ignore Origin No-Cache",
+    "enabled": true,
+    "category_id": 14,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.ignore-unsatisfiable-ranges",
+    "name": "Ignore Unsatisfiable Ranges",
+    "enabled": true,
+    "category_id": 14,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.instantiate-optimize-content",
+    "name": "Edge Optimizer - Instantiate Configuration",
+    "enabled": true,
+    "category_id": 14,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.livestats2.report-code",
+    "name": "Set Report Code",
+    "enabled": true,
+    "category_id": 14,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.log-querystring",
+    "name": "Log Query String",
+    "enabled": true,
+    "category_id": 14,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.max-cacheable-request-body",
+    "name": "Cacheable Request Body Size",
+    "enabled": true,
+    "category_id": 12,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.max-request-bytes",
+    "name": "Maximum POST Request Size",
+    "enabled": true,
+    "category_id": 12,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.max-stale",
+    "name": "Internal Max-Stale",
+    "enabled": true,
+    "category_id": 12,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.optimize-content",
+    "name": "Edge Optimizer",
+    "enabled": true,
+    "category_id": 12,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.proxy-max-keep-alive-requests",
+    "name": "Maximum Keep-Alive Requests",
+    "enabled": true,
+    "category_id": 12,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.proxy-special-headers",
+    "name": "Proxy Special Headers",
+    "enabled": true,
+    "category_id": 12,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.refresh-zero-byte-files",
+    "name": "Refresh Zero-Byte Cache Files",
+    "enabled": true,
+    "category_id": 12,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.rewrite-cache-key",
+    "name": "Cache-Key Rewrite",
+    "enabled": true,
+    "category_id": 12,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.send-age-header",
+    "name": "Age Response Header",
+    "enabled": true,
+    "category_id": 12,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.set-client-ip-header",
+    "name": "Set Client IP Custom Header",
+    "enabled": true,
+    "category_id": 12,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.set-request-header",
+    "name": "Modify Client Request Header",
+    "enabled": true,
+    "category_id": 12,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.set-response-header",
+    "name": "Modify Client Response Header",
+    "enabled": true,
+    "category_id": 13,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.stale-if-error",
+    "name": "Stale Content Delivery on Error",
+    "enabled": true,
+    "category_id": 13,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.stale-while-revalidate",
+    "name": "Stale While Revalidate",
+    "enabled": true,
+    "category_id": 13,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.token-auth",
+    "name": "Token Auth",
+    "enabled": true,
+    "category_id": 13,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.token-auth-denial-code",
+    "name": "Token Auth Denial Code",
+    "enabled": true,
+    "category_id": 13,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.token-ignore-url-case",
+    "name": "Token Auth Ignore URL Case",
+    "enabled": true,
+    "category_id": 13,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.url-redirect",
+    "name": "URL Redirect",
+    "enabled": true,
+    "category_id": 13,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.url-user-rewrite",
+    "name": "URL Rewrite",
+    "enabled": true,
+    "category_id": 13,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.user-debug-request-header",
+    "name": "Debug Cache Response Headers",
+    "enabled": true,
+    "category_id": 13,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.user-variable",
+    "name": "User Variable",
+    "enabled": true,
+    "category_id": 13,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  },
+  {
+    "tag": "feature.waf-instance",
+    "name": "Web Application Firewall",
+    "enabled": true,
+    "category_id": 13,
+    "attributes": [
+      {
+        "name": "",
+        "key": "value",
+        "ordinal": 0,
+        "regex": "",
+        "default_value": "",
+        "type": "string",
+        "required": true,
+        "options": [],
+        "created_at": "2015-02-10T23:36:01.8237536+00:00",
+        "links": {}
+      }
+    ],
+    "created_at": "2015-02-10T23:16:23.9477528+00:00",
+    "links": {}
+  }
+]

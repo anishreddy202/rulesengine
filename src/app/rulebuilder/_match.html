@@ -1,0 +1,116 @@
+<div class="_match" ng-init="parentNodes = parentTree">
+  <validator-msg errors="matchNode.errors"></validator-msg>
+
+  <h3 class="pull-left">
+    <span class="text-info">{{$index > 0 && selectFirst ? 'else if' : 'if'}}</span>
+  </h3>
+
+  <div class="pull-right" ng-if="rule.editMode">
+    <div class="btn-toolbar">
+      <div class="btn-group">
+        <div pop-over
+             class="btn text-muted"
+             ng-if="matchNode.description"
+             data-content="{{matchNode.description}}"
+             data-original-title="{{matchNode.name}}">
+          <span class="fa fa-info"></span>
+        </div>
+        <div class="btn text-muted" ng-click="removeNode(matchNode, parentNodes)">
+          <span class="fa fa-times-circle"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form class="form-inline">
+    <!--Match Dropdown-->
+    <div class="form-group">
+      <fieldset>
+        <legend>Match</legend>
+        <select class="form-control input-sm"
+                ng-options="category.id as category.name for category in match_categories"
+                ng-model="matchNode.selectedCategory"
+                ng-change="onSelectCategory(matchNode)"
+                ng-disabled="!rule.editMode"
+                ng-init="matchNode.selectedCategory = matchNode.selectedCategory
+                ? matchNode.selectedCategory
+                : matchNode.category_id ? (match_categories | filter:{'id': matchNode.category_id }: true)[0].id : undefined">
+          <option value="">Select Category</option>
+        </select>
+        <select class="form-control input-sm"
+                ng-options="match.tag as match.name for match in (matches | filter: filterByCategory(matchNode.selectedCategory))"
+                ng-model="matchNode.selectedMatch"
+                ng-disabled="!rule.editMode"
+                ng-change="onSelectMatch(matchNode, match.tag)"
+                ng-init="matchNode.selectedMatch = matchNode.selectedMatch
+                ? matchNode.selectedMatch
+                : matchNode.tag ? (matches | filter:{'tag': matchNode.tag }: true)[0].tag: undefined">
+          <option value="">Select Match</option>
+        </select>
+      </fieldset>
+    </div>
+    <ng-include src="'/rules/rulebuilder/_fields.html'"
+                ng-init="node = matchNode"
+                ng-if="matchNode.selectedMatch">
+    </ng-include>
+
+  </form>
+  <div class="pull-left dropdown-button" ng-if="rule.editMode || $root.createMode">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        <span class="fa fa-plus fa-lg"></span> &nbsp;
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li ng-if="!matchNode.nodes || (matchNode.nodes | filter:{'type':NODETYPE.SELECT}).length == 0">
+          <a ng-click="addNode(NODETYPE.SELECT, matchNode)">Select First Match</a>
+        </li>
+        <li>
+          <a ng-click="addNode(NODETYPE.MATCH, matchNode)">Match</a>
+        </li>
+        <li><a ng-click="addNode(NODETYPE.FEATURE, matchNode)"
+               ng-if="matchNode.selectedMatch">Feature</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div>
+    <!--FEATURE NODE-->
+    <div as-sortable="sortableFeaturesOptions" ng-model="matchNode.nodes">
+      <div class="_indent" as-sortable-item
+           ng-repeat="mNode in featureNodes = (parentTree = matchNode.nodes |filter:{type: NODETYPE.FEATURE} | orderBy: 'type')"
+           ng-class="{ '_less': !rule.editMode }">
+        <ng-include
+          ng-if="mNode.type === NODETYPE.FEATURE"
+          src="'/rules/rulebuilder/_feature.html'"
+          ng-init="featureNode = mNode; featureNode.parentNodes"></ng-include>
+      </div>
+    </div>
+
+    <!--MATCH NODE-->
+    <div class="_indent"
+         ng-repeat="mNode in matchNodes = (parentTree = matchNode.nodes |filter:{type: NODETYPE.MATCH} | orderBy: 'type')"
+         ng-class="{ '_less': !rule.editMode }">
+      <ng-include
+        ng-if="mNode.type === NODETYPE.MATCH"
+        src="'/rules/rulebuilder/_match.html'"
+        ng-init="matchNode = mNode; selectFirst = false"></ng-include>
+    </div>
+
+    <!--SELECT NODE-->
+    <div class="_indent"
+         ng-repeat="mNode in selectNodes = (parentTree = matchNode.nodes |filter:{type: NODETYPE.SELECT} | orderBy: 'type')"
+         ng-class="{ '_less': !rule.editMode }">
+      <ng-include
+        ng-if="mNode.type === NODETYPE.SELECT"
+        src="'/rules/rulebuilder/_select.html'"
+        ng-init="selectNode = mNode;"></ng-include>
+    </div>
+
+
+    <div class="clearfix"></div>
+
+  </div>
+
+
+</div>

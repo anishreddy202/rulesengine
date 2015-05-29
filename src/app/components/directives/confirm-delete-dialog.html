@@ -1,0 +1,67 @@
+<!-- Modal -->
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+          class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+          {{ (title === 'Deploy Request'? 'Cancel ' : title === 'Policy' ? 'Archive ' : 'Delete ') + title }}?
+        </h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>{{title}}</th>
+            <th>Last modified</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="item in items" ng-if="itemsType === 'Array'">
+            <td>
+                <span ng-if="title === 'Deploy Request'">
+                  {{ item.policy_name }}
+                  <span class="text-muted" style="font-size: 80%; margin-left: 20px; margin-right: 20px;">
+                    <span class="fa fa-long-arrow-right"></span>
+                  </span>
+                {{ item.environment_id === 1 ? 'PRODUCTION' : item.environment_id === 2 ? 'STAGING' : '' }}
+                </span>
+              <span ng-if="title != 'Deploy Request'">item.name</span>
+            </td>
+            <td><span
+              class="text-muted">{{ (item.updated_at ? item.updated_at : item.created_at) | date : 'medium' }}</span>
+            </td>
+          </tr>
+          <tr ng-if="itemsType === 'Object'">
+            <td><span ng-if="title === 'Deploy Request'">
+                  {{ items.policy_name }}
+                  <span class="text-muted" style="font-size: 80%; margin-left: 20px; margin-right: 20px;">
+                    <span class="fa fa-long-arrow-right"></span>
+                  </span>
+                {{ item.environment_id === 1 ? 'PRODUCTION' : items.environment_id === 2 ? 'STAGING' : '' }}
+                </span>
+              <span ng-if="title != 'Deploy Request'">{{items.name}}</span></td>
+            <td><span class="text-muted">{{ (items.updated_at ? items.updated_at : items.created_at) | date : 'medium' }}</span>
+            </td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+          <div class="col-xs-7 pull-right">
+            <a class="btn btn-link"
+               data-dismiss="modal">No, thank you.</a>
+            <a  class="btn btn-primary"
+                    data-dismiss="modal"
+                    ng-click='$parent.onConfirmDelete()'>
+              {{ (title === 'Deploy Request'? 'Cancel ' : title === 'Policy' ? 'Archive ' : 'Delete ') + title }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

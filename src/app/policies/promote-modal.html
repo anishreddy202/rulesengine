@@ -1,0 +1,90 @@
+<!-- Start Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" ng-show="policies.length > 0">
+                <h4 class="modal-title" id="myModalLabel">Current Policies</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row" ng-show="policies.length > 0">
+                    <div class="col-md-6">
+                        <div class="panel-body">
+                            <h4 class="text-center">Production</h4>
+
+                            <div class="panel panel-default" ng-repeat="doc in policies | filter: filterProd">
+                                <div class="panel-body">
+                                    <div class="clearfix">
+                                        <p class="text-center">{{doc.name}}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="clearfix">
+                                        <p class="text-center">Pending Policy for Production</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel-body">
+                            <h4 class="text-center">Staging</h4>
+
+                            <div class="panel panel-default" ng-repeat="doc in policies | filter: filterStaging">
+                                <div class="panel-body">
+                                    <div class="clearfix">
+                                        <p class="text-center">{{doc.name}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="modal-title" id="myModalLabel">Deploy Policy</h4>
+                <hr>
+                <div ng-show="currentStep == 1">
+                    <h4>
+                        Name:
+                    </h4>
+                    <input class="form-control" placeholder="Policy Name" type="text" ng-model="draft.name" ng-disabled="true"/>
+                    <h4>
+                        Description:
+                    </h4>
+                    <textarea  class="form-control" style="resize: none" placeholder="optional" type="text" ng-model="deploy_request.description"></textarea>
+                    <h4>
+                        Environment:
+                    </h4>
+
+                    <div class="clearfix text-center">
+                        <div class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-default btn-lg" ng-class="{'active': draft.environment == env.prod}"
+                                   ng-click="deploy_request.environment_id = env.prod">
+                                <input type="radio" name="options" ng-model="deploy_request.environment_id" value='{{env.prod}}'>
+                                Production
+                            </label>
+                            <label class="btn btn-default btn-lg" ng-class="{'active': draft.environment == env.staging}"
+                                   ng-click="deploy_request.environment_id = env.staging">
+                                <input type="radio" name="options" ng-model="deploy_request.environment_id" value='{{env.staging}}'>
+                                Staging
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div style="overflow: scroll" ng-show="currentStep == 2">
+                    <pre id="diff_display"></pre>
+                </div>
+            </div>
+            <br>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancel()">Cancel</button>
+                <button type="button" class="btn btn-primary"  ng-click='deployPolicy()'>{{currentStep === 2?'Deploy':'Continue'}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Modal -->

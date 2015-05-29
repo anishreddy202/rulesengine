@@ -1,0 +1,172 @@
+[
+  {
+    "media_type_id": 3,
+    "body": "<policy><rules><rule><description>simple if</description><match.asn result='match' value='2343'><feature.max-stale value='34'/></match.asn></rule></rules></policy>",
+    "name": "staging policy",
+    "policy_type_id": 1,
+    "draft_id": 132,
+    "created_at": "2015-03-02T18:12:32.131Z",
+    "updated_at": "2015-03-02T18:12:32.131Z",
+    "status": 1,
+    "id": 136
+  },
+  {
+    "media_type_id": 3,
+    "body": "<policy><rules><rule><description>simple if</description><match.url-path.extension result='match' value='456456' ignore-case=''><feature.max-stale value='34'/></match.url-path.extension></rule></rules></policy>",
+    "name": "production policy",
+    "policy_type_id": 1,
+    "draft_id": 133,
+    "created_at": "2015-03-02T18:12:47.807Z",
+    "updated_at": "2015-03-02T18:12:47.807Z",
+    "status": 1,
+    "id": 137
+  },
+  {
+    "media_type_id": 3,
+    "body": "<policy><rules><rule><description>nested if</description><match.request-method value='GET'><match.request-method value='POST'><match.request-method value='DEL'><feature.bwlimit value='ENABLE'/></match.request-method></match.request-method></match.request-method></rule></rules></policy>",
+    "name": "sample rule 1",
+    "policy_type_id": 1,
+    "draft_id": 135,
+    "created_at": "2015-03-04T17:57:14.160Z",
+    "updated_at": "2015-03-04T17:57:14.160Z",
+    "status": 1,
+    "id": 138
+  },
+  {
+    "media_type_id": 3,
+    "body": "<policy><rules><rule><description>if else if</description><select.first-match><match.request-method value='G'><feature.complete-cache-fill value='Enabled'/><select.first-match><match.var.integer key='key' compare='match' value='232'/><match.cdn-origin value='edgecast.com'/></select.first-match></match.request-method><match.request-method value='P'><feature.bwlimit value='F'/></match.request-method><match.client-address result='nomatch' value='23.23.23.23'><feature.ectoken.query-param value='auth param'/></match.client-address></select.first-match></rule></rules></policy>",
+    "name": "sample rule 2",
+    "policy_type_id": 1,
+    "draft_id": 139,
+    "created_at": "2015-03-04T21:17:50.483Z",
+    "updated_at": "2015-03-04T21:17:50.483Z",
+    "status": 1,
+    "id": 139
+  },
+  {
+    "media_type_id": 3,
+    "body": "<policy><rules><rule><description>simple if</description><match.request-header.literal name='test' result='match' value='100' ignore-case='true'><feature.bypass-cache value='enabled'/></match.request-header.literal></rule><rule><description>if else if (select.first-match)</description><select.first-match><match.cookie.param key='auth' result='match' value='token' ignore-case='false'><feature.cache-control-treatment value='okay'/></match.cookie.param><match.var.literal key='key' result='match' value='value' ignore-case='false'><feature.cache-fill-check-downstream-range value='10-300'/></match.var.literal></select.first-match></rule><rule><description>nested if</description><match.request-method value='GET'><match.url-path.directory result='match' value='edgecast' ignore-case='true' relative-to='test'><match.client-address result='match' value='12.2.2.3'><feature.gzip-validation value='enabled'/></match.client-address></match.url-path.directory></match.request-method></rule><rule><description>nested if else if (select.first-match)</description><match.request-scheme value='GET'><select.first-match><match.cdn-origin value='test'><feature.cacheable-status-codes value='1234'/></match.cdn-origin><match.var.regex key='key' result='match' value='value' ignore-case='true'><feature.cache-methods value='enabled'/></match.var.regex></select.first-match></match.request-scheme></rule><rule><description>nested if else if</description><select.first-match><match.country result='match' value='USA'><feature.bloom-filter-enable value='test'/><select.first-match><match.cdn-origin value='345'><feature.cache-fill-wait-msecs value='100' units='mins'/></match.cdn-origin><match.var.integer key='key' compare='equals' value='100'><feature.external-ttl value='100'/></match.var.integer></select.first-match></match.country><match.request-header.wildcard name='name' result='nomatch' value='(a-z)' ignore-case='false'><feature.cache-fill-wait-msecs value='10' units='sec'/></match.request-header.wildcard></select.first-match></rule></rules></policy>",
+    "name": "all possible cases",
+    "policy_type_id": 1,
+    "draft_id": 131,
+    "created_at": "2015-03-05T21:45:52.208Z",
+    "updated_at": "2015-03-05T21:45:52.208Z",
+    "status": 1,
+    "id": 142
+  },
+  {
+    "media_type_id": 3,
+    "body": "<policy><rules><rule><description>Some better name here</description><match.request-method value='GET'><match.request-method value='POST'><match.request-method value='DEL'><feature.bwlimit value='ENABLE'/></match.request-method></match.request-method></match.request-method></rule><rule><description>My awesome rule</description><select.first-match><match.request-header.literal name='hello' result='match' value='POST' ignore-case='true'><feature.cache-fill-spawn-subrequest-for-miss value='100'/></match.request-header.literal></select.first-match></rule></rules></policy>",
+    "name": "Black Friday Rules",
+    "policy_type_id": 1,
+    "draft_id": 135,
+    "created_at": "2015-03-12T19:32:45.951Z",
+    "updated_at": "2015-03-12T19:32:45.951Z",
+    "status": 1,
+    "id": 143
+  },
+  {
+    "media_type_id": 3,
+    "body": "<policy><rules><rule><description>testing comments</description><!--Changed by userId: 199 on 11/26/2013 07:08:12 PM GMT--><!--Changed by userId: 199 on 11/26/2013 07:08:12 PM GMT--><!--Changed by userId: 199 on 11/26/2013 07:08:12 PM GMT--><match.asn result='match' value='12345'><match.asn result='match' value='456'><match.asn result='match' value='1001'><select.first-match><match.asn result='match' value='2001'><feature.allowed-backend-tags value='4501'/></match.asn><match.asn result='match' value='3001'><feature.allowed-backend-tags value='6001'/></match.asn></select.first-match></match.asn></match.asn></match.asn></rule></rules></policy>",
+    "name": "validation",
+    "policy_type_id": 1,
+    "draft_id": 144,
+    "created_at": "2015-03-18T04:31:51.296Z",
+    "updated_at": "2015-03-18T04:31:51.297Z",
+    "status": 1,
+    "id": 144
+  },
+  {
+    "media_type_id": 3,
+    "body": "<policy><rules><rule><description>Some better name here</description><match.request-method value='GET'><match.request-method value='POST'><match.request-method value='DEL'><feature.bwlimit value='ENABLE'/></match.request-method></match.request-method></match.request-method></rule><rule><description>My awesome rule</description><select.first-match><match.request-header.literal name='hello' result='match' value='POST' ignore-case='true'><feature.cache-fill-spawn-subrequest-for-miss value='100'/></match.request-header.literal><match.client-address result='match' value='1.2.3.4'><feature.cache-methods value='1234'/></match.client-address></select.first-match></rule><rule><description>Cookie Handling</description><match.cookie.param key='foo' result='match' value='bar' ignore-case='true'><match.cookie.regex key='dfsdf' result='match' value='sdfsd' ignore-case='true'><feature.cache-fill-wait-msecs value='yee' units='haw'/></match.cookie.regex></match.cookie.param></rule></rules></policy>",
+    "name": "Black Friday Rules",
+    "policy_type_id": 1,
+    "draft_id": 135,
+    "created_at": "2015-03-18T05:53:16.061Z",
+    "updated_at": "2015-03-18T05:53:16.061Z",
+    "status": 1,
+    "id": 145
+  },
+  {
+    "id": 146,
+    "name": "Copy of all possible cases",
+    "body": "<policy><rules><rule><description>simple if</description><match.request-header.literal name='test' result='match' value='100' ignore-case='true'><feature.bypass-cache value='enabled'/></match.request-header.literal></rule><rule><description>if else if (select.first-match)</description><select.first-match><match.cookie.param key='auth' result='match' value='token' ignore-case='false'><feature.cache-control-treatment value='okay'/></match.cookie.param><match.var.literal key='key' result='match' value='value' ignore-case='false'><feature.cache-fill-check-downstream-range value='10-300'/></match.var.literal></select.first-match></rule><rule><description>nested if</description><match.request-method value='GET'><match.url-path.directory result='match' value='edgecast' ignore-case='true' relative-to='test'><match.client-address result='match' value='12.2.2.3'><feature.gzip-validation value='enabled'/></match.client-address></match.url-path.directory></match.request-method></rule><rule><description>nested if else if (select.first-match)</description><match.request-scheme value='GET'><select.first-match><match.cdn-origin value='test'><feature.cacheable-status-codes value='1234'/></match.cdn-origin><match.var.regex key='key' result='match' value='value' ignore-case='true'><feature.cache-methods value='enabled'/></match.var.regex></select.first-match></match.request-scheme></rule><rule><description>nested if else if</description><select.first-match><match.country result='match' value='USA'><feature.bloom-filter-enable value='test'/><select.first-match><match.cdn-origin value='345'><feature.cache-fill-wait-msecs value='100' units='mins'/></match.cdn-origin><match.var.integer key='key' compare='equals' value='100'><feature.external-ttl value='100'/></match.var.integer></select.first-match></match.country><match.request-header.wildcard name='name' result='nomatch' value='(a-z)' ignore-case='false'><feature.cache-fill-wait-msecs value='10' units='sec'/></match.request-header.wildcard></select.first-match></rule></rules></policy>",
+    "created_at": "2015-03-18T07:00:28.465Z",
+    "media_type_id": 3
+  },
+  {
+    "id": 147,
+    "name": "Copy of all possible cases",
+    "body": "<policy><rules><rule><description>simple if</description><match.request-header.literal name='test' result='match' value='100' ignore-case='true'><feature.bypass-cache value='enabled'/></match.request-header.literal></rule><rule><description>if else if (select.first-match)</description><select.first-match><match.cookie.param key='auth' result='match' value='token' ignore-case='false'><feature.cache-control-treatment value='okay'/></match.cookie.param><match.var.literal key='key' result='match' value='value' ignore-case='false'><feature.cache-fill-check-downstream-range value='10-300'/></match.var.literal></select.first-match></rule><rule><description>nested if</description><match.request-method value='GET'><match.url-path.directory result='match' value='edgecast' ignore-case='true' relative-to='test'><match.client-address result='match' value='12.2.2.3'><feature.gzip-validation value='enabled'/></match.client-address></match.url-path.directory></match.request-method></rule><rule><description>nested if else if (select.first-match)</description><match.request-scheme value='GET'><select.first-match><match.cdn-origin value='test'><feature.cacheable-status-codes value='1234'/></match.cdn-origin><match.var.regex key='key' result='match' value='value' ignore-case='true'><feature.cache-methods value='enabled'/></match.var.regex></select.first-match></match.request-scheme></rule><rule><description>nested if else if</description><select.first-match><match.country result='match' value='USA'><feature.bloom-filter-enable value='test'/><select.first-match><match.cdn-origin value='345'><feature.cache-fill-wait-msecs value='100' units='mins'/></match.cdn-origin><match.var.integer key='key' compare='equals' value='100'><feature.external-ttl value='100'/></match.var.integer></select.first-match></match.country><match.request-header.wildcard name='name' result='nomatch' value='(a-z)' ignore-case='false'><feature.cache-fill-wait-msecs value='10' units='sec'/></match.request-header.wildcard></select.first-match></rule></rules></policy>",
+    "created_at": "2015-03-18T07:00:37.862Z",
+    "media_type_id": 3
+  },
+  {
+    "id": 148,
+    "name": "Copy of sample rule 2",
+    "body": "<policy><rules><rule><description>if else if</description><select.first-match><match.request-method value='G'><feature.complete-cache-fill value='Enabled'/><select.first-match><match.var.integer key='key' compare='match' value='232'/><match.cdn-origin value='edgecast.com'/></select.first-match></match.request-method><match.request-method value='P'><feature.bwlimit value='F'/></match.request-method><match.client-address result='nomatch' value='23.23.23.23'><feature.ectoken.query-param value='auth param'/></match.client-address></select.first-match></rule></rules></policy>",
+    "created_at": "2015-03-18T07:02:06.661Z",
+    "media_type_id": 3
+  },
+  {
+    "id": 149,
+    "name": "Copy of Copy of all possible cases",
+    "body": "<policy><rules><rule><description>simple if</description><match.request-header.literal name='test' result='match' value='100' ignore-case='true'><feature.bypass-cache value='enabled'/></match.request-header.literal></rule><rule><description>if else if (select.first-match)</description><select.first-match><match.cookie.param key='auth' result='match' value='token' ignore-case='false'><feature.cache-control-treatment value='okay'/></match.cookie.param><match.var.literal key='key' result='match' value='value' ignore-case='false'><feature.cache-fill-check-downstream-range value='10-300'/></match.var.literal></select.first-match></rule><rule><description>nested if</description><match.request-method value='GET'><match.url-path.directory result='match' value='edgecast' ignore-case='true' relative-to='test'><match.client-address result='match' value='12.2.2.3'><feature.gzip-validation value='enabled'/></match.client-address></match.url-path.directory></match.request-method></rule><rule><description>nested if else if (select.first-match)</description><match.request-scheme value='GET'><select.first-match><match.cdn-origin value='test'><feature.cacheable-status-codes value='1234'/></match.cdn-origin><match.var.regex key='key' result='match' value='value' ignore-case='true'><feature.cache-methods value='enabled'/></match.var.regex></select.first-match></match.request-scheme></rule><rule><description>nested if else if</description><select.first-match><match.country result='match' value='USA'><feature.bloom-filter-enable value='test'/><select.first-match><match.cdn-origin value='345'><feature.cache-fill-wait-msecs value='100' units='mins'/></match.cdn-origin><match.var.integer key='key' compare='equals' value='100'><feature.external-ttl value='100'/></match.var.integer></select.first-match></match.country><match.request-header.wildcard name='name' result='nomatch' value='(a-z)' ignore-case='false'><feature.cache-fill-wait-msecs value='10' units='sec'/></match.request-header.wildcard></select.first-match></rule></rules></policy>",
+    "created_at": "2015-03-18T07:10:11.789Z",
+    "media_type_id": 3
+  },
+  {
+    "id": 150,
+    "name": "Copy of Copy of all possible cases",
+    "body": "<policy><rules><rule><description>simple if</description><match.request-header.literal name='test' result='match' value='100' ignore-case='true'><feature.bypass-cache value='enabled'/></match.request-header.literal></rule><rule><description>if else if (select.first-match)</description><select.first-match><match.cookie.param key='auth' result='match' value='token' ignore-case='false'><feature.cache-control-treatment value='okay'/></match.cookie.param><match.var.literal key='key' result='match' value='value' ignore-case='false'><feature.cache-fill-check-downstream-range value='10-300'/></match.var.literal></select.first-match></rule><rule><description>nested if</description><match.request-method value='GET'><match.url-path.directory result='match' value='edgecast' ignore-case='true' relative-to='test'><match.client-address result='match' value='12.2.2.3'><feature.gzip-validation value='enabled'/></match.client-address></match.url-path.directory></match.request-method></rule><rule><description>nested if else if (select.first-match)</description><match.request-scheme value='GET'><select.first-match><match.cdn-origin value='test'><feature.cacheable-status-codes value='1234'/></match.cdn-origin><match.var.regex key='key' result='match' value='value' ignore-case='true'><feature.cache-methods value='enabled'/></match.var.regex></select.first-match></match.request-scheme></rule><rule><description>nested if else if</description><select.first-match><match.country result='match' value='USA'><feature.bloom-filter-enable value='test'/><select.first-match><match.cdn-origin value='345'><feature.cache-fill-wait-msecs value='100' units='mins'/></match.cdn-origin><match.var.integer key='key' compare='equals' value='100'><feature.external-ttl value='100'/></match.var.integer></select.first-match></match.country><match.request-header.wildcard name='name' result='nomatch' value='(a-z)' ignore-case='false'><feature.cache-fill-wait-msecs value='10' units='sec'/></match.request-header.wildcard></select.first-match></rule></rules></policy>",
+    "created_at": "2015-03-18T08:40:40.685Z",
+    "media_type_id": 3
+  },
+  {
+    "media_type_id": 3,
+    "body": "<policy><rules><rule><description>My awesome description</description><match.var.integer key='foo' compare='bar' value='bazz'><feature.cache-methods value='123'/></match.var.integer></rule></rules></policy>",
+    "name": "Foo",
+    "policy_type_id": 1,
+    "draft_id": 156,
+    "created_at": "2015-03-18T09:46:27.792Z",
+    "updated_at": "2015-03-18T09:46:27.792Z",
+    "status": 1,
+    "id": 151
+  },
+  {
+    "id": 152,
+    "name": "Copy of Foo",
+    "body": "<policy><rules><rule><description>My awesome description</description><match.var.integer key='foo' compare='bar' value='bazz'><feature.cache-methods value='123'/></match.var.integer></rule></rules></policy>",
+    "created_at": "2015-03-19T16:15:41.818Z",
+    "media_type_id": 3
+  },
+  {
+    "id": 153,
+    "name": "Copy of Copy of Foo",
+    "body": "<policy><rules><rule><description>My awesome description</description><match.var.integer key='foo' compare='bar' value='bazz'><feature.cache-methods value='123'/></match.var.integer></rule></rules></policy>",
+    "created_at": "2015-03-19T16:15:59.968Z",
+    "media_type_id": 3
+  },
+  {
+    "media_type_id": 3,
+    "body": "<policy><rules><rule><description/><match.request-header.literal name='test2' result='match' value='Test' ignore-case='true'><match.asn result='match' value='454'><feature.allowed-backend-tags value='345'/></match.asn></match.request-header.literal></rule></rules></policy>",
+    "name": "draft name",
+    "policy_type_id": 1,
+    "draft_id": 157,
+    "created_at": "2015-03-19T16:54:45.612Z",
+    "updated_at": "2015-03-19T16:54:45.613Z",
+    "status": 1,
+    "id": 155
+  },
+  {
+    "media_type_id": 3,
+    "body": "<policy><rules><rule><description>Some better name changed</description><match.request-method value='GET'><match.request-method value='POST'><match.request-method value='DEL'><feature.bwlimit value='ENABLE'/></match.request-method></match.request-method></match.request-method></rule><rule><description>My awesome rule</description><select.first-match><match.request-header.literal name='hello' result='match' value='POST' ignore-case='true'><feature.cache-fill-spawn-subrequest-for-miss value='100'/></match.request-header.literal><match.client-address result='match' value='1.2.3.4'><feature.cache-methods value='1234'/></match.client-address></select.first-match></rule><rule><description>Cookie Handling</description><match.cookie.param key='foo' result='match' value='bar' ignore-case='true'><match.cookie.regex key='dfsdf' result='match' value='sdfsd' ignore-case='true'><feature.cache-fill-wait-msecs value='yee' units='haw'/></match.cookie.regex></match.cookie.param></rule></rules></policy>",
+    "name": "Copy of Black Friday Rules",
+    "policy_type_id": 1,
+    "draft_id": 163,
+    "created_at": "2015-03-19T16:55:05.337Z",
+    "updated_at": "2015-03-19T16:55:05.337Z",
+    "status": 1,
+    "id": 156
+  }
+]

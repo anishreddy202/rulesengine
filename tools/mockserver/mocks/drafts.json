@@ -1,0 +1,138 @@
+[
+  {
+    "name": "all possible cases",
+    "media_type_id": 3,
+    "draft_type_id": 1,
+    "body": "<policy><rules><rule><description>simple if</description><match.request-header.literal name='test' result='match' value='100' ignore-case='true'><feature.bypass-cache value='enabled'/></match.request-header.literal></rule><rule><description>if else if (select.first-match)</description><select.first-match><match.cookie.param key='auth' result='match' value='token' ignore-case='false'><feature.cache-control-treatment value='okay'/></match.cookie.param><match.var.literal key='key' result='match' value='value' ignore-case='false'><feature.cache-fill-check-downstream-range value='10-300'/></match.var.literal></select.first-match></rule><rule><description>nested if</description><match.request-method value='GET'><match.url-path.directory result='match' value='edgecast' ignore-case='true' relative-to='test'><match.client-address result='match' value='12.2.2.3'><feature.gzip-validation value='enabled'/></match.client-address></match.url-path.directory></match.request-method></rule><rule><description>nested if else if (select.first-match)</description><match.request-scheme value='GET'><select.first-match><match.cdn-origin value='test'><feature.cacheable-status-codes value='1234'/></match.cdn-origin><match.var.regex key='key' result='match' value='value' ignore-case='true'><feature.cache-methods value='enabled'/></match.var.regex></select.first-match></match.request-scheme></rule><rule><description>nested if else if</description><select.first-match><match.country result='match' value='USA'><feature.bloom-filter-enable value='test'/><select.first-match><match.cdn-origin value='345'><feature.cache-fill-wait-msecs value='100' units='mins'/></match.cdn-origin><match.var.integer key='key' compare='equals' value='100'><feature.external-ttl value='100'/></match.var.integer></select.first-match></match.country><match.request-header.wildcard name='name' result='nomatch' value='(a-z)' ignore-case='false'><feature.cache-fill-wait-msecs value='10' units='sec'/></match.request-header.wildcard></select.first-match></rule><rule><description>non nested ifs</description><match.country result='match' value='USA, UK'><match.asn result='match' value='1000'><feature.comment value='test1'/></match.asn><match.asn result='match' value='2000'><feature.comment value='test2'/><match.host value='T1'><feature.bloom-filter-enable value='E'/></match.host><match.host value='T3'><feature.follow-redirects value='C'/></match.host><match.host value='T4'><feature.expires-treatment value='D'/></match.host><match.client-address result='match' value='45.45.45.45'><feature.cache-prevalidate value='B'/></match.client-address></match.asn><match.asn result='match' value='3000'><feature.custom-log-field-1 value='test3'/></match.asn></match.country></rule><rule><description>selected first match with non nested ifs</description><select.first-match><match.cdn-origin value='AM,APAC'><match.request-method value='GET'><feature.bwlimit value='enabled'/></match.request-method><match.request-method value='POST'><feature.default-internal-maxage value='100'/></match.request-method></match.cdn-origin><match.cdn-origin value='AF,EU'><match.request-method value='GET'><feature.bypass-cache value='true'/></match.request-method><match.request-method value='POST'><feature.ectoken.query-param value='auth'/></match.request-method></match.cdn-origin></select.first-match></rule></rules></policy>",
+    "created_at": "2015-03-02T18:00:32.918Z",
+    "updated_at": "2015-03-20T21:18:10.688Z",
+    "status": 1,
+    "id": 131,
+    "newName": "all possible cases"
+  },
+  {
+    "name": "staging policy",
+    "media_type_id": 3,
+    "draft_type_id": 1,
+    "body": "<policy><rules><rule><description>simple if</description><match.cdn-origin value='edge'><feature.url-user-rewrite value='re'/></match.cdn-origin></rule></rules></policy>",
+    "created_at": "2015-03-02T18:11:57.344Z",
+    "updated_at": "2015-03-02T21:46:59.737Z",
+    "status": 1,
+    "id": 132
+  },
+  {
+    "id": 133,
+    "name": "production policy",
+    "body": "<policy><rules><rule><description>simple if</description><match.url-path.extension result='match' value='AAAA' ignore-case='true'><feature.max-stale value='AAAA'/><match.url-path.filename result='match' value='edgecast' ignore-case='false'><feature.custom-log-field-1 value='2345'/></match.url-path.filename></match.url-path.extension></rule></rules></policy>",
+    "media_type_id": 3,
+    "created_at": "2015-03-02T18:12:07.402Z",
+    "draft_type_id": 1,
+    "updated_at": "2015-03-06T20:52:02.762Z",
+    "status": 1
+  },
+  {
+    "name": "Black Friday Rules Woot Woot",
+    "media_type_id": 3,
+    "draft_type_id": 1,
+    "body": "<policy><rules><rule><description>Some better name changed</description><match.request-method value='GET'><match.request-method value='POST'><match.request-method value='DEL'><feature.bwlimit value='ENABLE'/></match.request-method></match.request-method></match.request-method></rule><rule><description>My awesome rule</description><select.first-match><match.request-header.literal name='hello' result='match' value='POST' ignore-case='true'><feature.cache-fill-spawn-subrequest-for-miss value='100'/></match.request-header.literal><match.client-address result='match' value='1.2.3.4'><feature.cache-methods value='1234'/></match.client-address></select.first-match></rule><rule><description>Cookie Handling</description><match.cookie.param key='foo' result='match' value='bar' ignore-case='true'><match.cookie.regex key='dfsdf' result='match' value='sdfsd' ignore-case='true'><feature.cache-fill-wait-msecs value='yee' units='haw'/></match.cookie.regex></match.cookie.param></rule></rules></policy>",
+    "created_at": "2015-03-02T22:59:41.042Z",
+    "updated_at": "2015-03-18T06:58:11.889Z",
+    "status": 1,
+    "id": 135,
+    "newName": "Black Friday Rules Woot Woot"
+  },
+  {
+    "name": "sample rule 2",
+    "media_type_id": 3,
+    "draft_type_id": 1,
+    "body": "<policy><rules><rule><description>if else if</description><select.first-match><match.request-method value='G'><feature.complete-cache-fill value='Enabled'/><select.first-match><match.var.integer key='key' compare='match' value='232'/><match.cdn-origin value='edgecast.com'/></select.first-match></match.request-method><match.request-method value='P'><feature.bwlimit value='F'/></match.request-method><match.client-address result='nomatch' value='23.23.23.23'><feature.ectoken.query-param value='auth param'/></match.client-address></select.first-match></rule></rules></policy>",
+    "created_at": "2015-03-03T00:57:01.883Z",
+    "updated_at": "2015-03-04T21:17:44.376Z",
+    "status": 1,
+    "id": 139,
+    "newName": "sample rule 2"
+  },
+  {
+    "name": "all possible form fields",
+    "media_type_id": 3,
+    "body": "<policy><rules><rule><description>multi checkbox</description><select.first-match><match.cdn-origin value='AM,EU,AU'><feature.bwlimit value='enabled'/></match.cdn-origin><match.cdn-origin value='AF,APAC'><feature.bwlimit value='disabled'/></match.cdn-origin></select.first-match></rule><rule><description>concat</description><match.customer-origin source='/803F6A/live/test'><feature.bypass-cache value='enable'/></match.customer-origin></rule><rule><description>text area</description><match.country result='match' value='usa,india,china'><feature.deny-access value='test'/></match.country></rule><rule><description>checkbox</description><match.request-header.literal name='test' result='match' value='TE' ignore-case='false'><feature.ignore-origin-nocache value='yes'/></match.request-header.literal></rule></rules></policy>",
+    "created_at": "2015-03-07T20:02:32.483Z",
+    "updated_at": "2015-03-09T00:26:58.566Z",
+    "status": 1,
+    "id": 145,
+    "draft_type_id": 1
+  },
+  {
+    "id": 151,
+    "name": "Black Friday Rules",
+    "body": "<policy><rules><rule><description>Some better name changed</description><match.request-method value='GET'><match.request-method value='POST'><match.request-method value='DEL'><feature.bwlimit value='ENABLE'/></match.request-method></match.request-method></match.request-method></rule><rule><description>My awesome rule</description><select.first-match><match.request-header.literal name='hello' result='match' value='POST' ignore-case='true'><feature.cache-fill-spawn-subrequest-for-miss value='100'/></match.request-header.literal><match.client-address result='match' value='1.2.3.4'><feature.cache-methods value='1234'/></match.client-address></select.first-match></rule><rule><description>Cookie Handling</description><match.cookie.param key='foo' result='match' value='bar' ignore-case='true'><match.cookie.regex key='dfsdf' result='match' value='sdfsd' ignore-case='true'><feature.cache-fill-wait-msecs value='yee' units='haw'/></match.cookie.regex></match.cookie.param></rule></rules></policy>",
+    "media_type_id": 3,
+    "created_at": "2015-03-18T06:59:41.991Z",
+    "draft_type_id": 1,
+    "newName": "Black Friday Rules",
+    "updated_at": "2015-03-18T07:00:20.446Z",
+    "status": 1
+  },
+  {
+    "newName": "Woohoo",
+    "name": "Woohoo",
+    "media_type_id": 3,
+    "draft_type_id": 1,
+    "body": "<policy><rules><rule/></rules></policy>",
+    "created_at": "2015-03-18T07:01:13.039Z",
+    "updated_at": "2015-03-18T07:01:13.039Z",
+    "status": 1,
+    "id": 152
+  },
+  {
+    "id": 153,
+    "name": "Black Friday Rules",
+    "body": "<policy><rules><rule><description>Some better name changed</description><match.request-method value='GET'><match.request-method value='POST'><match.request-method value='DEL'><feature.bwlimit value='ENABLE'/></match.request-method></match.request-method></match.request-method></rule><rule><description>My awesome rule</description><select.first-match><match.request-header.literal name='hello' result='match' value='POST' ignore-case='true'><feature.cache-fill-spawn-subrequest-for-miss value='100'/></match.request-header.literal><match.client-address result='match' value='1.2.3.4'><feature.cache-methods value='1234'/></match.client-address></select.first-match></rule><rule><description>Cookie Handling</description><match.cookie.param key='foo' result='match' value='bar' ignore-case='true'><match.cookie.regex key='dfsdf' result='match' value='sdfsd' ignore-case='true'><feature.cache-fill-wait-msecs value='yee' units='haw'/></match.cookie.regex></match.cookie.param></rule></rules></policy>",
+    "media_type_id": 3,
+    "created_at": "2015-03-18T07:01:33.681Z",
+    "draft_type_id": 1,
+    "newName": "Black Friday Rules",
+    "updated_at": "2015-03-18T09:26:51.584Z",
+    "status": 1
+  },
+  {
+    "name": "non nested if",
+    "media_type_id": 3,
+    "body": "<policy><rules><rule><description>sample description</description><match.request-method value='GET'><match.asn result='match' value='1000'><feature.bypass-cache value='test'/></match.asn><match.asn result='match' value='2000'><feature.comment value='test1'/></match.asn><match.asn result='match' value='3000'><feature.complete-cache-fill value='test2'/></match.asn></match.request-method></rule></rules></policy>",
+    "created_at": "2015-03-18T09:40:13.363Z",
+    "updated_at": "2015-03-19T22:50:32.441Z",
+    "status": 1,
+    "id": 154,
+    "draft_type_id": 1
+  },
+  {
+    "name": "Foo",
+    "media_type_id": 3,
+    "body": "<policy><rules><rule><description>My awesome description</description><match.var.integer key='foo' compare='bar' value='bazz'><feature.cache-methods value='123'/></match.var.integer></rule></rules></policy>",
+    "created_at": "2015-03-18T09:45:20.164Z",
+    "updated_at": "2015-03-18T09:46:04.564Z",
+    "status": 1,
+    "id": 156,
+    "draft_type_id": 1
+  },
+  {
+    "id": 169,
+    "name": "Copy of non nested if",
+    "body": "<policy><rules><rule><description>sample description1</description><match.request-method value='GET'><match.asn result='match' value='1000'><feature.comment value='test1'/></match.asn><match.asn result='match' value='2000'><feature.comment value='test2'/></match.asn><match.asn result='match' value='3000'><feature.comment value='test3'/></match.asn></match.request-method></rule></rules></policy>",
+    "media_type_id": 3,
+    "created_at": "2015-03-19T23:08:26.325Z",
+    "draft_type_id": 1,
+    "updated_at": "2015-03-19T23:09:24.313Z",
+    "status": 1
+  },
+  {
+    "name": "test",
+    "media_type_id": 3,
+    "body": "<policy><rules><rule><description>test</description><match.asn result='match' value='43545'><feature.allow-error-failover value='3434'/></match.asn><match.var.literal key='45' result='match' value='45' ignore-case='false'><feature.cache-fill-spawn-subrequest-for-miss value='3434'/></match.var.literal></rule></rules></policy>",
+    "created_at": "2015-03-19T23:30:06.872Z",
+    "updated_at": "2015-03-20T20:51:49.080Z",
+    "status": 1,
+    "id": 170,
+    "draft_type_id": 1
+  }
+]

@@ -1,0 +1,83 @@
+<loading-anim></loading-anim>
+
+<div class="page-header">
+  <ol class="breadcrumb">
+    <li>
+      <a ui-sref="main.home">
+        Rules Engine
+      </a>
+    </li>
+    <li>
+      <a ui-sref="main.deploy_requests.index">
+        Deploy Requests
+      </a>
+    </li>
+    <li class="active">
+      {{ deployRequest.id }}
+    </li>
+  </ol>
+
+  <div class="pull-right">
+    <!--Pending Review-->
+    <a role="button"
+       class="btn btn-default"
+       ng-if="deployRequest.state_id === 1 || deployRequest.state_id === 5"
+       data-toggle="modal"
+       data-target="#confirmModal">
+      Cancel Deploy Request
+    </a>
+  </div>
+  <h2>
+    <span class="pull-left">
+      {{ deployRequest.policy_name }}
+    <span class="text-muted" style="font-size: 80%; margin-left: 20px; margin-right: 20px;">
+      <span class="fa fa-long-arrow-right"></span>
+    </span>
+    {{ deployRequest.environment_id === 1 ? 'PRODUCTION' : deployRequest.environment_id === 2 ? 'STAGING' : '' }}
+    </span>
+
+    <small class="pull-left label-tag">
+      <deploy-request-label
+        ng-if="deployRequest"
+        item="deployRequest"></deploy-request-label>
+    </small>
+    &nbsp;
+
+  </h2>
+</div>
+
+<confirm-dialog
+  items="deployRequest"
+  title="Deploy Request"></confirm-dialog>
+<alert-msg></alert-msg>
+
+<div class="row">
+  <div class="col-xs-8">
+    <ng-include src="'/rules/deploy-requests/deploy-requests-show-raw.html'"></ng-include>
+  </div>
+  <div class="col-xs-4">
+    <div class="page-header">
+      <h4>Activity</h4>
+    </div>
+    <p class="text-muted" ng-show="!deployRequest.state_history.length">
+      <em>No history available</em>
+    </p>
+    <ul class="timeline">
+      <li class="timeline-item" ng-repeat="item in deployRequest.state_history | orderBy: '-updated_at'">
+        <deploy-request-icon item="item"></deploy-request-icon>
+        <p>
+          <deploy-request-label item="item"></deploy-request-label>
+        </p>
+        <p>
+          <span class="timeline-item-date">
+            {{ item.updated_at | date: 'medium' }}
+          </span>
+        </p>
+        <p class="timeline-item-description text-muted">
+          {{ item.description }}
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+

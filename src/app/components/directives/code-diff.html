@@ -1,0 +1,8 @@
+<table class="diffTableBorder">
+    <tr ng-repeat="line in parsedDiffXML" ng-class="{'success':line.isAdded,'danger':line.isRemoved}">
+        <td>{{line.line_number1}}</td>
+        <td>{{line.line_number2}}</td>
+        <td>{{line.symbol}}</td>
+        <td><pre><code>{{line.value}}</code></pre></td>
+    </tr>
+</table>

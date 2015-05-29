@@ -1,0 +1,25 @@
+<div class="page-header">
+  <ol class="breadcrumb">
+    <li>
+      <a ui-sref="main.home">
+        Rules Engine
+      </a>
+    </li>
+    <li class="active">
+      Deploy Requests
+    </li>
+  </ol>
+  <h2>
+    Deploy Requests
+  </h2>
+</div>
+
+<alert-msg></alert-msg>
+
+<div class="row">
+  <div class="col-md-8">
+    <ng-include src="'/rules/deploy-requests/deploy-requests-index-list.html'" onload="maxItems=1000"></ng-include>
+  </div>
+  <div class="col-md-4">
+  </div>
+</div>

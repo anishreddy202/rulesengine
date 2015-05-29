@@ -1,0 +1,79 @@
+<div class="page-header">
+  <ol class="breadcrumb">
+    <li>
+      <a ui-sref="main.home">
+        Rules Engine
+      </a>
+    </li>
+    <li class="active">
+      Deploy Requests
+    </li>
+  </ol>
+  <div class="pull-right">
+    <a class="btn btn-default" ng-click="back()">
+      <span class="fa fa-cancel"></span>
+      Cancel
+    </a>
+    <a role="button" class="btn" ng-click="submit()" ng-disabled="!deployRequest.environment_id"
+       ng-class="{'btn-primary':deployRequest.environment_id, 'btn-default':!deployRequest.environment_id}">
+      <span class="fa fa-cloud-upload"></span>
+      Create Deploy Request
+    </a>
+  </div>
+  <h2>
+    {{ policy.name }}
+    <span class="text-muted" style="font-size: 80%; margin-left: 20px; margin-right: 20px;">
+      <span class="fa fa-long-arrow-right"></span>
+    </span>
+    {{ deployRequest.environment_id === 1 ? 'PRODUCTION' : deployRequest.environment_id === 2 ? 'STAGING' : '' }}
+    <span ng-if="!prevPolicy && createMode" class="text-muted">[ select environment ]</span>
+    &nbsp;
+  </h2>
+</div>
+
+<alert-msg></alert-msg>
+
+<div class="row">
+  <div class="col-xs-8">
+    <ui-view></ui-view>
+  </div>
+  <div class="col-xs-4">
+    <form novalidate name="deployForm">
+
+    <div class="form-group" ng-if="createMode">
+      <div class="form-control-static">
+        <label for="environment">Environment</label>
+          <!-- TODO: Change this to standard slect box using ng-model -->
+          <div class="dropdown" data-toggle="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="environment" data-toggle="dropdown">
+              {{
+                deployRequest.environment_id == env.Production ? 'Production ' :
+                deployRequest.environment_id == env.Staging ? 'Staging ' :
+                'Select Environment'
+              }}
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li role="presentation">
+                <a role="menuitem" tabindex="-1" ng-click="selectEnvironment(env.Production, deployRequestInProduction)">
+                  Production
+                </a>
+              </li>
+              <li role="presentation">
+                <a role="menuitem" tabindex="-1" ng-click="selectEnvironment(env.Staging, deployRequestInStaging)">
+                  Staging
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group" ng-class="{'has-error': deployForm.deploymessage.$invalid && $blurred}">
+        <label for="deploymessage">Message</label>
+        <textarea cols="5" rows="3"  name="deploymessage" class="form-control" require-input ng-model="deployRequest.description"></textarea>
+      </div>
+    </form>
+  </div>
+</div>
+

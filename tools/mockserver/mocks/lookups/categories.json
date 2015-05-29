@@ -1,0 +1,101 @@
+[
+  {
+    "id": 4,
+    "name": "Request",
+    "description": "This category allows to match on properties of HTTP request such as schema, method, headers and originating client IP address. ",
+    "is_enabled": true,
+    "category_type_id": 1,
+    "created_at": "2015-02-10T23:10:36.4399328+00:00",
+    "links": {}
+  },
+  {
+    "id": 5,
+    "name": "Variable",
+    "description": "This category allows to match on any HTTP variable available in Sailfish, but not directly supported in the UI (i.e. this is our universal catch-all match)",
+    "is_enabled": true,
+    "category_type_id": 1,
+    "created_at": "2015-02-10T23:10:36.4555336+00:00",
+    "links": {}
+  },
+  {
+    "id": 6,
+    "name": "Device",
+    "description": "This category allows to match on mobile device properties and identify capabilities such as brand name, OS version, resolution, etc.",
+    "is_enabled": true,
+    "category_type_id": 1,
+    "created_at": "2015-02-10T23:10:36.4555336+00:00",
+    "links": {}
+  },
+  {
+    "id": 7,
+    "name": "Location",
+    "description": "This category allows to match on geographical location of originating client such as continent, country, city, etc.",
+    "is_enabled": true,
+    "category_type_id": 1,
+    "created_at": "2015-02-10T23:10:36.4555336+00:00",
+    "links": {}
+  },
+  {
+    "id": 8,
+    "name": "Server",
+    "description": "This category allows to match on properties of CDN server such as POP code.",
+    "is_enabled": true,
+    "category_type_id": 1,
+    "created_at": "2015-02-10T23:10:36.4555336+00:00",
+    "links": {}
+  },
+  {
+    "id": 9,
+    "name": "URL",
+    "description": "This category allows to match on URL elements such as path and query string.  ",
+    "is_enabled": true,
+    "category_type_id": 1,
+    "created_at": "2015-02-10T23:10:36.4555336+00:00",
+    "links": {}
+  },
+  {
+    "id": 10,
+    "name": "General",
+    "description": "General",
+    "is_enabled": true,
+    "category_type_id": 1,
+    "created_at": "2015-02-10T23:10:36.4555336+00:00",
+    "links": {}
+  },
+  {
+    "id": 11,
+    "name": "Origin",
+    "description": "This category allows to match on Customer or CDN Origin server.",
+    "is_enabled": true,
+    "category_type_id": 1,
+    "created_at": "2015-02-10T23:10:36.4555336+00:00",
+    "links": {}
+  },
+  {
+    "id": 12,
+    "name": "Category A",
+    "description": "Description",
+    "is_enabled": true,
+    "category_type_id": 2,
+    "created_at": "2015-02-10T23:10:36.4555336+00:00",
+    "links": {}
+  },
+  {
+    "id": 13,
+    "name": "Category B",
+    "description": "Discriptoin",
+    "is_enabled": true,
+    "category_type_id": 2,
+    "created_at": "2015-02-10T23:10:36.4555336+00:00",
+    "links": {}
+  },
+  {
+    "id": 14,
+    "name": "Category C",
+    "description": "Discription",
+    "is_enabled": true,
+    "category_type_id": 2,
+    "created_at": "2015-02-10T23:10:36.4555336+00:00",
+    "links": {}
+  }
+]

@@ -1,0 +1,69 @@
+<div class="page-header">
+  <ol class="breadcrumb">
+    <li>
+      <a ui-sref="main.home">
+        Rules Engine
+      </a>
+    </li>
+    <li class="active">
+      Policies
+    </li>
+  </ol>
+  <h2>
+    Policies
+  </h2>
+</div>
+
+<alert-msg></alert-msg>
+
+<div class="row">
+  <div class="col-md-8">
+
+
+    <ul class="nav nav-tabs" style="margin-bottom: 20px;">
+      <li class="active" data-toggle="tab" data-target="#tab-policies" ng-click="currentTab = 'policies'">
+        <a>
+          <span class="fa fa-lock"></span>
+          Policies
+        </a>
+      </li>
+      <li data-toggle="tab" data-target="#tab-archied_policies" ng-click="currentTab = 'archive'">
+        <a>
+          <span class="fa fa-file-archive-o"></span>
+          Archive
+        </a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+
+      <div class="tab-pane active" id="tab-policies" ng-controller="policiesIndexCtrl">
+        <ng-include src="'/rules/policies/policies-index-list.html'"
+                    ng-if="!currentTab || currentTab == 'policies'"
+                    onload="filterParam={is_archived:false};maxItems=1000;"></ng-include>
+        <p>
+          <a class="btn btn-link" ui-sref="main.policies.index" ng-show="collection.length > recentItemsCap">
+            <i>more &hellip;</i>
+          </a>
+        </p>
+      </div>
+
+      <div class="tab-pane" id="tab-archied_policies" ng-controller="policiesIndexCtrl">
+        <ng-include src="'/rules/policies/policies-index-list.html'"
+                    ng-if="currentTab == 'archive'"
+                    onload="filterParam={is_archived:true};maxItems=1000;"></ng-include>
+        <p>
+          <a class="btn btn-link" ui-sref="main.policies.index" ng-show="collection.length > recentItemsCap">
+            <i>more &hellip;</i>
+          </a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+    <!--<ng-include src="'/rules/policies/policies-index-list.html'" onload="filter='!item.is_archived';maxItems=1000;"></ng-include>-->
+  </div>
+  <div class="col-md-4">
+  </div>
+</div>

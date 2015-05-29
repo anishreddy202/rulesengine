@@ -1,0 +1,30 @@
+[
+    {
+      "id": 1,
+      "name": "Submitted"
+    },
+    {
+      "id": 2,
+      "name": "Approved"
+    },
+    {
+      "id": 3,
+      "name": "Rejected"
+    },
+    {
+      "id": 4,
+      "name": "Deployed"
+    },
+    {
+      "id": 5,
+      "name": "Pending Review"
+    },
+    {
+      "id": 6,
+      "name": "Escalated"
+    },
+    {
+      "id": 7,
+      "name": "Canceled"
+    }
+  ]
